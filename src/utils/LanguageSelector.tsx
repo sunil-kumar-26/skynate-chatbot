@@ -3,7 +3,7 @@ import { Select } from "antd";
 import { getLanguageCode, getLanguages, setLanguageCode } from "../i18n";
 
 const LanguageSelector: React.FC = () => {
-  const currentLangaue = getLanguageCode();
+  const currentLanguage = getLanguageCode();
   const handleLanguageCode = async(language: string) => {
     setLanguageCode(language);
     window.location.reload();
@@ -11,7 +11,7 @@ const LanguageSelector: React.FC = () => {
   return (
     <span>
       <Select
-        value={currentLangaue}
+        value={currentLanguage}
         style={{
           width: 100,
         }}

@@ -26,7 +26,6 @@ const Menu = () => {
                 key={idx}
               >
                 {item.label}
-                
                 <Indicator $activeIndex={activeIndex} />
               </div>
             );

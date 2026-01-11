@@ -10,16 +10,18 @@ const Header = ({ themeSettings }: HeaderProps) => {
     <HeaderWrapper>
       <div className="header">
         <Logo />
-        <Space vertical>
-          <Switch
-            checkedChildren="dark"
-            unCheckedChildren="ligth"
-            defaultChecked
-            onClick={themeSettings.toggleTheme}
-            checked={themeSettings.isDarkTheme ? true : false}
-          />
-        </Space>
-        <LanguageSelector />
+        <div className="settings-container">
+          <Space vertical>
+            <Switch
+              checkedChildren="dark"
+              unCheckedChildren="light"
+              defaultChecked
+              onClick={themeSettings.toggleTheme}
+              checked={themeSettings.isDarkTheme ? true : false}
+            />
+          </Space>
+          <LanguageSelector />
+        </div>
         <Menu />
       </div>
     </HeaderWrapper>
@@ -33,10 +35,19 @@ const HeaderWrapper = styled.div`
     display: flex !important ;
     justify-content: space-between;
     padding: 5px;
+    gap: 12px;
     align-content: center;
-    align-items:center;
     color: white;
     position: fixed;
     width: 100%;
+    z-index:10;
+  }
+  .settings-container {
+    display: flex;
+    height: 50px;
+    flex-wrap: wrap;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
   }
 `;
