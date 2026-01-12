@@ -1,10 +1,13 @@
 export const darkTheme = {
   body: "#141B2D",
+  button:'#F6F9F6',
+  buttonTitle:'#141B2D',
   title: "#FFFFFF",
   applicationLogo:
     "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(100%) hue-rotate(198deg) brightness(100%) contrast(100%)",
   headerBody: "#182034",
   borders: "#253344",
+  heroPageBackground:' #000000',
   freePlanContainer: "#1F2940",
   testreportcontainer: "#1F1F21",
   freePlanTimer: "transparent",
@@ -67,10 +70,16 @@ export const darkTheme = {
   facebookMiniCardGradient: "linear-gradient(180deg, #2b3f59 0%, #1e2d47 100%)",
   instaMiniCardGradient: "linear-gradient(180deg, #4a1f33 0%, #2a0f26 100%)",
   rainbowText:'#FFFFFF',
+  buttonHoverText:'#141B2D',
 };
+
 export const lightTheme = {
   rainbowText: "linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #4b0082, #8f00ff 100%)",
   body: "#F6F9F6",
+  heroPageBackground:'linear-gradient( 135deg, #f8fafc 0%, #e8f1ff 35%, #e9e4ff 65%, #f3e8ff 100%)',
+  button:'#141B2D',
+  buttonTitle:'#F6F9F6',
+  buttonHoverText:'#141B2D',
   headerBody: "#FFFFFF",
   borders: "#EAEBEE",
   freePlanContainer: "#FFFFFF",

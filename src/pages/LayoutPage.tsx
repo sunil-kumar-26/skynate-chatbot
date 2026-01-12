@@ -2,7 +2,9 @@ import React from "react";
 import { Layout } from "antd";
 import styled from "styled-components";
 import Header from "../components/Header";
-import { i18nHtml } from "../i18n";
+import { HeroPage } from "./HeroPage";
+import MovingStrip from "../utils/MovingStrip";
+import FeaturePage from "./FeaturePage";
 
 const { Content, Footer } = Layout;
 interface LayoutPageProps {
@@ -12,10 +14,12 @@ interface LayoutPageProps {
 const LayoutPage: React.FC<LayoutPageProps> = ({ themeSettings }) => {
   return (
     <LayoutPageWrapper>
-      <Layout>
+      <Layout className="layout">
         <Header themeSettings={themeSettings} />
         <Content className="content-container">
-          {i18nHtml("messages.lorem")}
+          <HeroPage />
+          {/* <MovingStrip/> */}
+          <FeaturePage/>
         </Content>
         <Footer style={{ textAlign: "center", border: "1px solid black" }}>
           Ant Design ©{new Date().getFullYear()} Created by Ant UED
@@ -28,12 +32,18 @@ const LayoutPage: React.FC<LayoutPageProps> = ({ themeSettings }) => {
 export default LayoutPage;
 
 const LayoutPageWrapper = styled.div`
+  .layout {
+    background: ${(props) => props.theme.heroPageBackground};
+  }
   .content-container {
     padding: 10px;
+    padding-bottom:0px;
+    padding-left: 0px;
+    padding-right: 0px;
     height: 100%;
     min-height: 100vh;
     margin-top: 70px;
-    background: ${(props) => props.theme.body};
+    // background: ${(props) => props.theme.body};
     color: ${(props) => props.theme.title};
   }
 `;
