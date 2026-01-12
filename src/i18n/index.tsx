@@ -165,11 +165,11 @@ async function initPa() {
   const language = languages["pa"];
 
   // @ts-ignore
-  const momentLocale = (await import("moment/locale/pa-IN")).default;
+  const momentLocale = (await import("moment/locale/hi")).default;
 
   language.dictionary = (await import("./pa")).default;
 
-  moment.locale("pa-IN", momentLocale);
+  moment.locale("hi", momentLocale);
 
   if (language.dictionary.validation) {
     setYupLocale(language.dictionary.validation);
