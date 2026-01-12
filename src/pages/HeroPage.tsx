@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 import { i18n } from "../i18n";
 import { MdArrowOutward } from "react-icons/md";
-import { Button, Row, Col, } from "antd";
+import { Button, Row, Col } from "antd";
 
 export const HeroPage = () => {
   return (
