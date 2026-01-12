@@ -3,7 +3,6 @@ import { Layout } from "antd";
 import styled from "styled-components";
 import Header from "../components/Header";
 import { HeroPage } from "./HeroPage";
-import MovingStrip from "../utils/MovingStrip";
 import FeaturePage from "./FeaturePage";
 
 const { Content, Footer } = Layout;
@@ -18,7 +17,6 @@ const LayoutPage: React.FC<LayoutPageProps> = ({ themeSettings }) => {
         <Header themeSettings={themeSettings} />
         <Content className="content-container">
           <HeroPage />
-          {/* <MovingStrip/> */}
           <FeaturePage/>
         </Content>
         <Footer style={{ textAlign: "center", border: "1px solid black" }}>

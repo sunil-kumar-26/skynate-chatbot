@@ -3,7 +3,6 @@ import { Typography } from "../theme/AppTypography";
 import { i18n } from "../i18n";
 import { MdArrowOutward } from "react-icons/md";
 import { Button, Row, Col, Card } from "antd";
-import MovingStrip from "../utils/MovingStrip";
 
 export const HeroPage = () => {
   return (
