@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
+import { StripContent } from "../data/StripData";
 
 const MovingStrip = () => {
   const track = useRef<HTMLDivElement | null>(null);
@@ -19,14 +20,15 @@ const MovingStrip = () => {
           onMouseLeave={() => handleStrip(2)}
           className="track"
         >
-          <span>Customer Support</span>
-          <span>AI Chatbot Setup</span>
-          <span>Multi-channel Chat</span>
-          <span>Smart Automation</span>
-          <span>Customer Support</span>
-          <span>AI Chatbot Setup</span>
-          <span>Multi-channel Chat</span>
-          <span>Smart Automation</span>
+          {StripContent &&
+            StripContent.map((item) => (
+              <span>
+                <i>
+                  {item.label}
+                  {item.icon}
+                </i>
+              </span>
+            ))}
         </div>
       </div>
     </StripWrapper>
@@ -44,8 +46,7 @@ const StripWrapper = styled.div`
 
   .track {
     display: flex;
-    width: max-content;
-    animation: marquee 18s linear infinite;
+    animation: marquee 20s linear infinite;
   }
 
   .track span {
@@ -53,6 +54,12 @@ const StripWrapper = styled.div`
     color: #fff;
     font-weight: 500;
     font-size: 15px;
+  }
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
   }
 
   @keyframes marquee {

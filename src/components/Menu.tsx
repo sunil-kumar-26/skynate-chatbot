@@ -57,8 +57,8 @@ const Menu = () => {
 
 export default Menu;
 const MenuWrapper = styled.div`
-  background: black;
-  color: white;
+  // background: black;
+  color: ${props=>props.theme.text};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

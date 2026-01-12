@@ -31,7 +31,7 @@ const Header = ({ themeSettings }: HeaderProps) => {
 export default Header;
 const HeaderWrapper = styled.div`
   .header {
-    background-color: black;
+    // background-color: black;
     display: flex !important ;
     justify-content: space-between;
     padding: 5px;

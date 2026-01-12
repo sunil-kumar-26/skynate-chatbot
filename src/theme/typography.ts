@@ -36,12 +36,22 @@ export const themeTypography = {
     fontWeight: 400,
     lineHeight: 'auto',
   },
+    h3Semibold: {
+    fontSize: '27px',
+    fontWeight: 700,
+    lineHeight: 'auto',
+  },
   h4Semibold: {
     fontSize: '20px',
     fontWeight: 600,
     lineHeight: 'auto',
   },
-  h4Regular: {
+  h4LightRegular: {
+    fontSize: '18px',
+    fontWeight: 400,
+    lineHeight: 'auto',
+  },
+    h4Regular: {
     fontSize: '18px',
     fontWeight: 600,
     lineHeight: 'auto',
