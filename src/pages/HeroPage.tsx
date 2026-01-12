@@ -30,7 +30,7 @@ export const HeroPage = () => {
           </Typography>
         </Col>
         <Col md={12} xs={24} lg={8} className="img-container">
-          <img src="./public\auth-images\girlOnComputer.png" alt="skynate" />
+          <img src="./auth-images/girlOnComputer.png" alt="skynate" />
         </Col>
       </Row>
       <Row justify={"space-around"} className="row-container2" wrap={true}>
