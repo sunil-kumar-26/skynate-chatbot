@@ -7,7 +7,7 @@ import { Button, Row, Col } from "antd";
 export const HeroPage = () => {
   return (
     <HeroWrapper>
-      <Typography variant="h1Bold" className="typographyH1">
+      <Typography variant="h1Special" className="typographyH1">
         {i18n("heroSection.intoductionMessage")}
       </Typography>
       <Typography variant="h4Semibold" className="typographyH4">
@@ -46,7 +46,7 @@ export const HeroPage = () => {
           </Typography>
         </Col>
         <Col md={12} xs={24} lg={8} className="img-container">
-          <img src="./public\auth-images\inputOutput.png" alt="skynate" />
+          <img src="./auth-images/inputOutput.png" alt="skynate" />
         </Col>
       </Row>
     </HeroWrapper>
@@ -118,7 +118,7 @@ const HeroWrapper = styled.div`
 
   .typographyH4Regular {
     text-align: start;
-    color: ${(props) => props.theme.title};
+    color: ${(props) => props.theme.text};
   }
 
   @media (max-width: 768px) {

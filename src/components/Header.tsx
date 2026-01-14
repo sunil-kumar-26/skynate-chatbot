@@ -31,7 +31,6 @@ const Header = ({ themeSettings }: HeaderProps) => {
 export default Header;
 const HeaderWrapper = styled.div`
   .header {
-    // background-color: black;
     display: flex !important ;
     justify-content: space-between;
     padding: 5px;
@@ -40,7 +39,11 @@ const HeaderWrapper = styled.div`
     color: white;
     position: fixed;
     width: 100%;
-    z-index:10;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   .settings-container {
     display: flex;
