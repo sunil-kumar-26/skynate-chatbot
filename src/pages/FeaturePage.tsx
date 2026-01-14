@@ -6,19 +6,66 @@ import { i18n } from "../i18n";
 const FeaturePage = () => {
   return (
     <FeatureWrapper>
-      <Typography variant="h1Bold" className={"feature-headline"}>
-        {i18n('featureSection.mainHeading')}
-      </Typography>
+      <div className="feature">
+        <Typography variant="h1Special" className={"feature-headline"}>
+          {i18n("featureSection.mainHeading")}
+        </Typography>
+        <Typography variant="h4Regular" className={"feature-subheadline"}>
+          Skynate provides the simplest and quickest solutions, without
+          involving difficult interaction with free of use
+        </Typography>
+      </div>
+
+      <Row className="cards-container">
+        <Col lg={5} sm={10} xs={22} className="blue-card">
+          <Typography
+            variant="h1Bold"
+            style={{ textAlign: "center", color: "#5298f9" }}
+          >
+            Free
+          </Typography>
+          <p style={{ textAlign: "center" }}>You can use it for free</p>
+        </Col>
+        <Col lg={5} sm={10} xs={22} className="greenContainer">
+          <Typography
+            variant="h1Bold"
+            style={{ textAlign: "center", color: " #42a847" }}
+          >
+            Free
+          </Typography>
+          <p style={{ textAlign: "center" }}>You can use it for free</p>
+        </Col>
+        <Col lg={5} sm={10} xs={22} className="orangeContainer">
+          <Typography
+            variant="h1Bold"
+            style={{ textAlign: "center", color: " #ee6618" }}
+          >
+            Free
+          </Typography>
+          <p style={{ textAlign: "center" }}>You can use it for free</p>
+        </Col>
+        <Col lg={5} sm={10} xs={22} className="purpleContainer">
+          <Typography
+            variant="h1Bold"
+            style={{ textAlign: "center", color: "#b46ad9" }}
+            color="link"
+          >
+            Free
+          </Typography>
+          <p style={{ textAlign: "center" }}>You can use it for free</p>
+        </Col>
+      </Row>
+
       <Row justify={"space-around"} className="row1">
         <Col xs={24} md={12} lg={8} className="col-1">
           <Typography variant="h3Semibold" className={"row1typography1"}>
-            {i18n('featureSection.easyToUse.heading')}
+            {i18n("featureSection.easyToUse.heading")}
           </Typography>
           <Typography variant="h4LightRegular" className={"row1typography2"}>
-            <div> {i18n('featureSection.easyToUse.summary1')}</div>
-            <div>{i18n('featureSection.easyToUse.summary2')}</div>
-            <div>{i18n('featureSection.easyToUse.summary3')}</div>
-            <div>{i18n('featureSection.easyToUse.summary4')}</div>
+            <div> {i18n("featureSection.easyToUse.summary1")}</div>
+            <div>{i18n("featureSection.easyToUse.summary2")}</div>
+            <div>{i18n("featureSection.easyToUse.summary3")}</div>
+            <div>{i18n("featureSection.easyToUse.summary4")}</div>
           </Typography>
         </Col>
         <Col lg={10} className="img-container">
@@ -39,25 +86,25 @@ const FeaturePage = () => {
         </Col>
         <Col xs={24} md={12} lg={10} className="col-2">
           <Typography variant="h3Semibold" className={"row2typography1"}>
-             {i18n('featureSection.noAccount.heading')}
+            {i18n("featureSection.noAccount.heading")}
           </Typography>
           <Typography variant="h4LightRegular" className={"row2typography2"}>
-           <div> {i18n('featureSection.noAccount.summary1')}</div>
-            <div>{i18n('featureSection.noAccount.summary2')}</div>
-            <div>{i18n('featureSection.noAccount.summary3')}</div>
-            <div>{i18n('featureSection.noAccount.summary4')}</div>
+            <div> {i18n("featureSection.noAccount.summary1")}</div>
+            <div>{i18n("featureSection.noAccount.summary2")}</div>
+            <div>{i18n("featureSection.noAccount.summary3")}</div>
+            <div>{i18n("featureSection.noAccount.summary4")}</div>
           </Typography>
         </Col>
       </Row>
       <Row justify={"space-around"} className="row3">
         <Col xs={24} md={12} lg={8} className="col-3">
           <Typography variant="h3Semibold" className={"row3typography1"}>
-             {i18n('featureSection.openSource.heading')}
+            {i18n("featureSection.openSource.heading")}
           </Typography>
           <Typography variant="h4LightRegular" className={"row3typography2"}>
-            <div> {i18n('featureSection.openSource.summary1')}</div>
-            <div>{i18n('featureSection.openSource.summary2')}</div>
-            <div>{i18n('featureSection.openSource.summary3')}</div>
+            <div> {i18n("featureSection.openSource.summary1")}</div>
+            <div>{i18n("featureSection.openSource.summary2")}</div>
+            <div>{i18n("featureSection.openSource.summary3")}</div>
           </Typography>
         </Col>
         <Col lg={10} className="img-container">
@@ -75,16 +122,136 @@ const FeaturePage = () => {
 export default FeaturePage;
 
 const FeatureWrapper = styled.div`
-  // background:${(props) => props.theme.body};
   margin-top: 60px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 70px;
+  align-items: center;
 
-  .feature-headline {
+  .cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+  }
+  .purpleContainer {
+    color: #b46ad9;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    background: linear-gradient(
+      45deg,
+      rgb(180, 106, 217),
+      rgba(48, 6, 93, 0.9)
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(137, 13, 199);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+  .purpleContainer:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-12px);
+  }
+
+  .greenContainer {
+    color: #42a847;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, rgb(79, 127, 81), rgba(29, 53, 23, 0.9));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(69, 155, 74, 0.85);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+
+  .greenContainer:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-12px);
+  }
+
+  .orangeContainer {
+    color: rgb(238, 102, 24);
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    background: linear-gradient(
+      45deg,
+      rgb(209, 111, 55),
+      rgba(46, 41, 39, 0.49)
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(209, 111, 55);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+
+  .orangeContainer:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-12px);
+  }
+
+  .blue-card {
+    color: #5298f9;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    background: linear-gradient(
+      45deg,
+      rgba(67, 131, 243, 0.85),
+      rgba(24, 36, 59, 0.9)
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(112, 156, 232, 0.85);
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+  }
+  .blue-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-12px);
+  }
+
+  .feature {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
     text-align: center;
-    color: ${(props) => props.theme.title};
+    height: 100%;
+    min-height: 140px;
+    justify-content: center;
+    transition: transform 0.5s ease;
+  }
+  .feature:hover {
+    transform: translateY(-12px);
+  }
+
+  .feature-subheadline {
+    color: ${(props) => props.theme.text};
+  }
+  .feature-headline {
+    background: ${(props) => props.theme.gradientText};
+    padding: 6px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .img-container {
     display: flex;
@@ -128,7 +295,7 @@ const FeatureWrapper = styled.div`
     flex-direction: column;
     gap: 12px;
     align-items: start;
-    color: ${(props) => props.theme.title};
+    color: ${(props) => props.theme.text};
   }
   .row2typography1 {
     text-align: start;
@@ -139,7 +306,7 @@ const FeatureWrapper = styled.div`
     flex-direction: column;
     gap: 12px;
     align-items: start;
-    color: ${(props) => props.theme.title};
+    color: ${(props) => props.theme.text};
   }
   .row3typography1 {
     text-align: start;
@@ -150,7 +317,7 @@ const FeatureWrapper = styled.div`
     flex-direction: column;
     gap: 12px;
     align-items: start;
-    color: ${(props) => props.theme.title};
+    color: ${(props) => props.theme.text};
   }
 
   .img1 {
@@ -172,13 +339,18 @@ const FeatureWrapper = styled.div`
     border-radius: 5%;
   }
   @media (max-width: 768px) {
+    // .card-purple {
+    //   min-width: 48%;
+    //   flex-wrap:wrap;
+    // }
+
     .row1typography1 {
       text-align: center;
     }
 
     .row1typography2 {
       align-items: center;
-       text-align:center;
+      text-align: center;
     }
     .row2typography1 {
       text-align: center;
@@ -186,7 +358,7 @@ const FeatureWrapper = styled.div`
 
     .row2typography2 {
       align-items: center;
-       text-align:center;
+      text-align: center;
     }
     .row3typography1 {
       text-align: center;
@@ -194,7 +366,7 @@ const FeatureWrapper = styled.div`
 
     .row3typography2 {
       align-items: center;
-      text-align:center;
+      text-align: center;
     }
     .row2 {
       display: flex;

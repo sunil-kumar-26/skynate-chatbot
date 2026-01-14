@@ -71,6 +71,7 @@ export const darkTheme = {
   instaMiniCardGradient: "linear-gradient(180deg, #4a1f33 0%, #2a0f26 100%)",
   rainbowText:'#FFFFFF',
   buttonHoverText:'#141B2D',
+  gradientText:'linear-gradient(45deg, #e8eaf0,#4c80e1, #ba5fe8)',
 };
 
 export const lightTheme = {
@@ -91,6 +92,7 @@ export const lightTheme = {
   subtitle: "#7782A1",
   sideMenu: "#FFFFFF",
   sidebarMenuIcons: "#000000",
+  gradientText:'linear-gradient(45deg, #6297fb, #6045d8)',
 
   siderMenuSelectedBackground: "#F4F4FF",
   siderMenuHoverEffect: "#5550FF",

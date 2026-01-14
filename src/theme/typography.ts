@@ -1,4 +1,9 @@
 export const themeTypography = {
+  h1Special: {
+    fontSize: '48px',
+    fontWeight: 700,
+    lineHeight: '1.1',
+  },
   h1Regular: {
     fontSize: '39px',
     fontWeight: 400,

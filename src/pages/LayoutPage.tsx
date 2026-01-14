@@ -31,7 +31,7 @@ export default LayoutPage;
 
 const LayoutPageWrapper = styled.div`
   .layout {
-    background: ${(props) => props.theme.heroPageBackground};
+    background: ${(props) => props.theme.heroPageBackground};z
   }
   .content-container {
     padding: 10px;
