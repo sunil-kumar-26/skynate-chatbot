@@ -20,13 +20,13 @@ export const HeroPage = () => {
       <Row justify={"space-around"} className="row-container1" wrap={true}>
         <Col md={12} xs={24} lg={12} className="col-1">
           <Typography variant="h2Semibold" className={"typographyH2"}>
-            {i18n('heroSection.heading1')}
+            {i18n("heroSection.heading1")}
           </Typography>
           <Typography
             variant="h4LightRegular"
             className={"typographyH4Regular"}
           >
-           {i18n('heroSection.headingDescrip1')}
+            {i18n("heroSection.headingDescrip1")}
           </Typography>
         </Col>
         <Col md={12} xs={24} lg={8} className="img-container">
@@ -36,13 +36,13 @@ export const HeroPage = () => {
       <Row justify={"space-around"} className="row-container2" wrap={true}>
         <Col md={12} xs={24} lg={10} className="col-1">
           <Typography variant="h2Semibold" className={"typographyH2"}>
-          {i18n('heroSection.heading2')}
+            {i18n("heroSection.heading2")}
           </Typography>
           <Typography
             variant="h4LightRegular"
             className={"typographyH4Regular"}
           >
-           {i18n('heroSection.headingDescrip2')}
+            {i18n("heroSection.headingDescrip2")}
           </Typography>
         </Col>
         <Col md={12} xs={24} lg={8} className="img-container">
@@ -112,20 +112,17 @@ const HeroWrapper = styled.div`
   }
 
   .typographyH2 {
-    text-align: start;
     color: ${(props) => props.theme.title};
+    padding: 0px 12px;
   }
 
   .typographyH4Regular {
-    text-align: start;
     color: ${(props) => props.theme.text};
+    padding: 0px 12px;
   }
 
   @media (max-width: 768px) {
     .typographyH2 {
-      text-align: center;
-    }
-    .typographyH4Regular {
       text-align: center;
     }
   }

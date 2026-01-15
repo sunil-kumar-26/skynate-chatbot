@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import { HeroPage } from "./HeroPage";
 import FeaturePage from "./FeaturePage";
+import Footers from "../components/Footers";
 
 const { Content, Footer } = Layout;
 interface LayoutPageProps {
@@ -17,10 +18,10 @@ const LayoutPage: React.FC<LayoutPageProps> = ({ themeSettings }) => {
         <Header themeSettings={themeSettings} />
         <Content className="content-container">
           <HeroPage />
-          <FeaturePage/>
+          <FeaturePage />
         </Content>
-        <Footer style={{ textAlign: "center", border: "1px solid black" }}>
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+        <Footer className="lay-footer-container">
+          <Footers />
         </Footer>
       </Layout>
     </LayoutPageWrapper>
@@ -44,4 +45,8 @@ const LayoutPageWrapper = styled.div`
     // background: ${(props) => props.theme.body};
     color: ${(props) => props.theme.title};
   }
+    .lay-footer-container{
+    padding:0px;
+    border-top:1px solid ${(props) => props.theme.cardBorder};
+    }
 `;

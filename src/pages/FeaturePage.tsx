@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 import { Col, Row } from "antd";
 import { i18n } from "../i18n";
+import { FaSteamSymbol } from "react-icons/fa6";
+import { FaWordpressSimple } from "react-icons/fa";
+import { MdMoneyOff } from "react-icons/md";
+import { FaUserFriends } from "react-icons/fa";
 
 const FeaturePage = () => {
   return (
@@ -22,25 +26,25 @@ const FeaturePage = () => {
             variant="h1Bold"
             style={{ textAlign: "center", color: "#5298f9" }}
           >
-            Free
+            <MdMoneyOff /> Free
           </Typography>
           <p style={{ textAlign: "center" }}>You can use it for free</p>
         </Col>
         <Col lg={5} sm={10} xs={22} className="greenContainer">
           <Typography
             variant="h1Bold"
-            style={{ textAlign: "center", color: " #42a847" }}
+            style={{ textAlign: "center", color: " #428fa8ff" }}
           >
-            Free
+            <FaWordpressSimple /> Simple
           </Typography>
           <p style={{ textAlign: "center" }}>You can use it for free</p>
         </Col>
         <Col lg={5} sm={10} xs={22} className="orangeContainer">
           <Typography
             variant="h1Bold"
-            style={{ textAlign: "center", color: " #ee6618" }}
+            style={{ textAlign: "center", color: " #8A5DF6" }}
           >
-            Free
+            <FaSteamSymbol /> Quick
           </Typography>
           <p style={{ textAlign: "center" }}>You can use it for free</p>
         </Col>
@@ -50,7 +54,7 @@ const FeaturePage = () => {
             style={{ textAlign: "center", color: "#b46ad9" }}
             color="link"
           >
-            Free
+            <FaUserFriends /> Friendly
           </Typography>
           <p style={{ textAlign: "center" }}>You can use it for free</p>
         </Col>
@@ -144,15 +148,12 @@ const FeatureWrapper = styled.div`
     justify-content: center;
     padding: 12px;
     border-radius: 12px;
+    box-shadow: 0 5px 20px #b46ad9;
     flex-wrap: wrap;
-    background: linear-gradient(
-      45deg,
-      rgb(180, 106, 217),
-      rgba(48, 6, 93, 0.9)
-    );
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgb(137, 13, 199);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: box-shadow 0.5s ease, transform 0.5s ease;
   }
   .purpleContainer:hover {
@@ -161,7 +162,7 @@ const FeatureWrapper = styled.div`
   }
 
   .greenContainer {
-    color: #42a847;
+    color: #428fa8ff;
     font-weight: 800;
     display: flex;
     flex-direction: column;
@@ -169,10 +170,11 @@ const FeatureWrapper = styled.div`
     padding: 12px;
     border-radius: 12px;
     flex-wrap: wrap;
-    background: linear-gradient(45deg, rgb(79, 127, 81), rgba(29, 53, 23, 0.9));
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgb(69, 155, 74, 0.85);
+    box-shadow: 0 5px 20px #428fa8;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: box-shadow 0.5s ease, transform 0.5s ease;
   }
 
@@ -182,22 +184,18 @@ const FeatureWrapper = styled.div`
   }
 
   .orangeContainer {
-    color: rgb(238, 102, 24);
+    color: #8a5df6;
     font-weight: 800;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 12px;
     border-radius: 12px;
-    flex-wrap: wrap;
-    background: linear-gradient(
-      45deg,
-      rgb(209, 111, 55),
-      rgba(46, 41, 39, 0.49)
-    );
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgb(209, 111, 55);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 20px #8a5df6;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: box-shadow 0.5s ease, transform 0.5s ease;
   }
 
@@ -215,14 +213,11 @@ const FeatureWrapper = styled.div`
     padding: 12px;
     border-radius: 12px;
     flex-wrap: wrap;
-    background: linear-gradient(
-      45deg,
-      rgba(67, 131, 243, 0.85),
-      rgba(24, 36, 59, 0.9)
-    );
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(112, 156, 232, 0.85);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 20px #5298f9;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: box-shadow 0.5s ease, transform 0.5s ease;
   }
   .blue-card:hover {
@@ -269,6 +264,7 @@ const FeatureWrapper = styled.div`
   .row3 {
     display: flex;
     gap: 18px;
+    padding-bottom: 40px;
   }
   .col-1 {
     display: flex;
@@ -287,6 +283,7 @@ const FeatureWrapper = styled.div`
   }
   .row1typography1 {
     text-align: start;
+    padding: 0px 12px;
     color: ${(props) => props.theme.title};
   }
 
@@ -294,29 +291,31 @@ const FeatureWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: start;
+    padding: 0px 12px;
     color: ${(props) => props.theme.text};
   }
   .row2typography1 {
     text-align: start;
+    padding: 0px 12px;
     color: ${(props) => props.theme.title};
   }
   .row2typography2 {
     display: flex;
     flex-direction: column;
+    padding: 0px 12px;
     gap: 12px;
-    align-items: start;
     color: ${(props) => props.theme.text};
   }
   .row3typography1 {
     text-align: start;
+    padding: 0px 12px;
     color: ${(props) => props.theme.title};
   }
   .row3typography2 {
     display: flex;
+    padding: 0px 12px;
     flex-direction: column;
     gap: 12px;
-    align-items: start;
     color: ${(props) => props.theme.text};
   }
 
@@ -339,34 +338,21 @@ const FeatureWrapper = styled.div`
     border-radius: 5%;
   }
   @media (max-width: 768px) {
-    // .card-purple {
-    //   min-width: 48%;
-    //   flex-wrap:wrap;
-    // }
-
     .row1typography1 {
       text-align: center;
     }
 
-    .row1typography2 {
-      align-items: center;
-      text-align: center;
-    }
     .row2typography1 {
       text-align: center;
     }
 
     .row2typography2 {
-      align-items: center;
-      text-align: center;
     }
     .row3typography1 {
       text-align: center;
     }
 
     .row3typography2 {
-      align-items: center;
-      text-align: center;
     }
     .row2 {
       display: flex;

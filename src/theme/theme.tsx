@@ -3,6 +3,7 @@ export const darkTheme = {
   button:'#F6F9F6',
   buttonTitle:'#141B2D',
   title: "#FFFFFF",
+  footerBackground:'radial-gradient(circle at top, #0b1020, #060914)',
   applicationLogo:
     "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(100%) hue-rotate(198deg) brightness(100%) contrast(100%)",
   headerBody: "#182034",
@@ -79,6 +80,7 @@ export const lightTheme = {
   body: "#F6F9F6",
   heroPageBackground:'linear-gradient( 135deg, #f8fafc 0%, #e8f1ff 35%, #e9e4ff 65%, #f3e8ff 100%)',
   button:'#141B2D',
+  footerBackground:'radial-gradient(circle at top, #0b1020, #060914)',
   buttonTitle:'#F6F9F6',
   buttonHoverText:'#141B2D',
   headerBody: "#FFFFFF",
