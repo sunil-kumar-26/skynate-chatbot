@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import { HeroPage } from "./HeroPage";
 import FeaturePage from "./FeaturePage";
 import Footers from "../components/Footers";
+import { ContactUs } from "./ContactUs";
 
 const { Content, Footer } = Layout;
 interface LayoutPageProps {
@@ -19,6 +20,7 @@ const LayoutPage: React.FC<LayoutPageProps> = ({ themeSettings }) => {
         <Content className="content-container">
           <HeroPage />
           <FeaturePage />
+          <ContactUs/>
         </Content>
         <Footer className="lay-footer-container">
           <Footers />

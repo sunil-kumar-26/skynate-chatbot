@@ -6,11 +6,30 @@ import { FaSteamSymbol } from "react-icons/fa6";
 import { FaWordpressSimple } from "react-icons/fa";
 import { MdMoneyOff } from "react-icons/md";
 import { FaUserFriends } from "react-icons/fa";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const FeaturePage = () => {
+  const { ref: textRef1, isVisible: visible1 } =
+    useScrollAnimation<HTMLDivElement>();
+  const { ref: textRef2, isVisible: visible2 } =
+    useScrollAnimation<HTMLDivElement>();
+  const { ref: textRef3, isVisible: visible3 } =
+    useScrollAnimation<HTMLDivElement>();
+  const { ref: textRef4, isVisible: visible4 } =
+    useScrollAnimation<HTMLDivElement>();
+
+  const { ref: imgRef1, isVisible: imgvisible1 } =
+    useScrollAnimation<HTMLImageElement>();
+  const { ref: imgRef2, isVisible: imgvisible2 } =
+    useScrollAnimation<HTMLImageElement>();
+  const { ref: imgRef3, isVisible: imgvisible3 } =
+    useScrollAnimation<HTMLImageElement>();
   return (
     <FeatureWrapper>
-      <div className="feature">
+      <div
+        className={`feature col-1 scroll-animate ${visible1 ? "animate" : ""}`}
+        ref={textRef1}
+      >
         <Typography variant="h1Special" className={"feature-headline"}>
           {i18n("featureSection.mainHeading")}
         </Typography>
@@ -61,7 +80,13 @@ const FeaturePage = () => {
       </Row>
 
       <Row justify={"space-around"} className="row1">
-        <Col xs={24} md={12} lg={8} className="col-1">
+        <Col
+          xs={24}
+          md={12}
+          lg={8}
+          ref={textRef2}
+          className={`col-1 scroll-animate ${visible2 ? "animate" : ""}`}
+        >
           <Typography variant="h3Semibold" className={"row1typography1"}>
             {i18n("featureSection.easyToUse.heading")}
           </Typography>
@@ -74,9 +99,10 @@ const FeaturePage = () => {
         </Col>
         <Col lg={10} className="img-container">
           <img
+            ref={imgRef1}
             src="./auth-images/easeUse.png"
             alt="Easy use"
-            className="img1"
+            className={`img1 col-1 scroll-animate ${imgvisible1 ? "animate" : ""}`}
           />
         </Col>
       </Row>
@@ -85,10 +111,17 @@ const FeaturePage = () => {
           <img
             src="./auth-images/openSource.png"
             alt="Easy use"
-            className="img2"
+            ref={imgRef2}
+            className={`img2 col-1 scroll-animate ${imgvisible2 ? "animate" : ""}`}
           />
         </Col>
-        <Col xs={24} md={12} lg={10} className="col-2">
+        <Col
+          xs={24}
+          md={12}
+          lg={10}
+          ref={textRef3}
+          className={`col-2 scroll-animate ${visible3 ? "animate" : ""}`}
+        >
           <Typography variant="h3Semibold" className={"row2typography1"}>
             {i18n("featureSection.noAccount.heading")}
           </Typography>
@@ -101,7 +134,13 @@ const FeaturePage = () => {
         </Col>
       </Row>
       <Row justify={"space-around"} className="row3">
-        <Col xs={24} md={12} lg={8} className="col-3">
+        <Col
+          xs={24}
+          md={12}
+          lg={8}
+          ref={textRef4}
+          className={`col-3 scroll-animate ${visible4 ? "animate" : ""}`}
+        >
           <Typography variant="h3Semibold" className={"row3typography1"}>
             {i18n("featureSection.openSource.heading")}
           </Typography>
@@ -115,7 +154,8 @@ const FeaturePage = () => {
           <img
             src="./auth-images/noAccount.png"
             alt="Easy use"
-            className="img3"
+            ref={imgRef3}
+            className={`img3 col-1 scroll-animate ${imgvisible3 ? "animate" : ""}`}
           />
         </Col>
       </Row>
@@ -148,13 +188,15 @@ const FeatureWrapper = styled.div`
     justify-content: center;
     padding: 12px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px #b46ad9;
+    // box-shadow: 0 5px 20px #b46ad9;
     flex-wrap: wrap;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition:
+      box-shadow 0.5s ease,
+      transform 0.5s ease;
   }
   .purpleContainer:hover {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -170,12 +212,14 @@ const FeatureWrapper = styled.div`
     padding: 12px;
     border-radius: 12px;
     flex-wrap: wrap;
-    box-shadow: 0 5px 20px #428fa8;
+    // box-shadow: 0 5px 20px #428fa8;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition:
+      box-shadow 0.5s ease,
+      transform 0.5s ease;
   }
 
   .greenContainer:hover {
@@ -192,11 +236,13 @@ const FeatureWrapper = styled.div`
     padding: 12px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 5px 20px #8a5df6;
+    // box-shadow: 0 5px 20px #8a5df6;
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition:
+      box-shadow 0.5s ease,
+      transform 0.5s ease;
   }
 
   .orangeContainer:hover {
@@ -214,11 +260,13 @@ const FeatureWrapper = styled.div`
     border-radius: 12px;
     flex-wrap: wrap;
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 5px 20px #5298f9;
+    // box-shadow: 0 5px 20px #5298f9;
     backdrop-filter: blur(15px) saturate(180%);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition:
+      box-shadow 0.5s ease,
+      transform 0.5s ease;
   }
   .blue-card:hover {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -322,19 +370,19 @@ const FeatureWrapper = styled.div`
   .img1 {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 70%;
     border-radius: 5%;
   }
   .img2 {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 70%;
     border-radius: 5%;
   }
   .img3 {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 70%;
     border-radius: 5%;
   }
   @media (max-width: 768px) {
@@ -358,6 +406,28 @@ const FeatureWrapper = styled.div`
       display: flex;
       flex-direction: column-reverse;
       gap: 18px;
+    }
+  }
+  .scroll-animate {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(40px);
+  }
+
+  .scroll-animate.animate {
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+  }
+
+  @keyframes text-focus-in {
+    0% {
+      opacity: 0;
+      filter: blur(12px);
+      transform: translateY(40px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0) scale(1);
     }
   }
 `;

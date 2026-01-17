@@ -3,8 +3,17 @@ import { Typography } from "../theme/AppTypography";
 import { i18n } from "../i18n";
 import { MdArrowOutward } from "react-icons/md";
 import { Button, Row, Col } from "antd";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export const HeroPage = () => {
+  const { ref: imgRef1, isVisible: imgVisible1 } =
+    useScrollAnimation<HTMLImageElement>();
+  const { ref: imgRef2, isVisible: imgVisible2 } =
+    useScrollAnimation<HTMLImageElement>();
+  const { ref: textRef1, isVisible: textVisible1 } =
+    useScrollAnimation<HTMLDivElement>();
+  const { ref: textRef2, isVisible: textVisible2 } =
+    useScrollAnimation<HTMLDivElement>();
   return (
     <HeroWrapper>
       <Typography variant="h1Special" className="typographyH1">
@@ -18,7 +27,13 @@ export const HeroPage = () => {
         <MdArrowOutward />
       </Button>
       <Row justify={"space-around"} className="row-container1" wrap={true}>
-        <Col md={12} xs={24} lg={12} className="col-1">
+        <Col
+          ref={textRef1}
+          md={12}
+          xs={24}
+          lg={12}
+          className={`col-1 scroll-animate ${textVisible1 ? "animate" : ""}`}
+        >
           <Typography variant="h2Semibold" className={"typographyH2"}>
             {i18n("heroSection.heading1")}
           </Typography>
@@ -30,11 +45,22 @@ export const HeroPage = () => {
           </Typography>
         </Col>
         <Col md={12} xs={24} lg={8} className="img-container">
-          <img src="./auth-images/girlOnComputer.png" alt="skynate" />
+          <img
+            src="./auth-images/girlOnComputer.png"
+            alt="skynate"
+            ref={imgRef1}
+            className={`scroll-animate ${imgVisible1 ? "animate" : ""}`}
+          />
         </Col>
       </Row>
       <Row justify={"space-around"} className="row-container2" wrap={true}>
-        <Col md={12} xs={24} lg={10} className="col-1">
+        <Col
+          md={12}
+          xs={24}
+          ref={textRef2}
+          lg={10}
+          className={`col-1 scroll-animate ${textVisible2 ? "animate" : ""}`}
+        >
           <Typography variant="h2Semibold" className={"typographyH2"}>
             {i18n("heroSection.heading2")}
           </Typography>
@@ -46,7 +72,12 @@ export const HeroPage = () => {
           </Typography>
         </Col>
         <Col md={12} xs={24} lg={8} className="img-container">
-          <img src="./auth-images/inputOutput.png" alt="skynate" />
+          <img
+            src="./auth-images/inputOutput.png"
+            alt="skynate"
+            ref={imgRef2}
+            className={`scroll-animate ${imgVisible2 ? "animate" : ""}`}
+          />
         </Col>
       </Row>
     </HeroWrapper>
@@ -54,6 +85,29 @@ export const HeroPage = () => {
 };
 
 const HeroWrapper = styled.div`
+  .scroll-animate {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(40px);
+  }
+
+  .scroll-animate.animate {
+    animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+  }
+
+  @keyframes text-focus-in {
+    0% {
+      opacity: 0;
+      filter: blur(12px);
+      transform: translateY(40px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0) scale(1);
+    }
+  }
+
   width: 100%;
   padding-top: 38px;
   padding-bottom: 18px;
