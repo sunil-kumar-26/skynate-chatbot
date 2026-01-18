@@ -30,3 +30,10 @@ export const forgotPasswordSchema = yup.object({
     .email("Invalid email address")
     .required("Email is required"),
 });
+
+export const modalSchema = yup.object({
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
+});
