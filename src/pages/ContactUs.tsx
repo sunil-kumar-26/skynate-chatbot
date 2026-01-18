@@ -95,6 +95,7 @@ export const ContactUs = () => {
         <Modal
           title={"Submit detail"}
           open={openModal}
+          centered={true}
           footer={false}
           onCancel={handleCloseModal}
         >
@@ -146,7 +147,6 @@ const ContactWrapper = styled.div`
 
   .mail-btn {
     display: flex;
-    flex-wrap: wrap;
     background-color: ${(props) => props.theme.button};
     color: ${(props) => props.theme.buttonTitle};
     font-size: 18px;
@@ -180,7 +180,7 @@ const ContactWrapper = styled.div`
   .col-2 {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     padding: 12px;
@@ -482,6 +482,11 @@ const ContactWrapper = styled.div`
     90% {
       -webkit-transform: rotate(2deg);
       transform: rotate(2deg);
+    }
+  }
+  @media (max-width: 425px) {
+    .col-2 {
+      flex-direction: column;
     }
   }
 `;
