@@ -29,6 +29,4 @@ export const StripContent: content[] = [
     label: "Easy-Use",
     icon: <FaWordpressSimple />,
   },
-  
-  
 ];

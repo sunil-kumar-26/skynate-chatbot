@@ -48,6 +48,7 @@ const HeaderWrapper = styled.div`
   }
   .light-container {
     color: #f6f9f6;
+    height:30%;
     background: #6e6a6a;
     font-size: 32px;
     padding: 4px;
@@ -83,7 +84,8 @@ const HeaderWrapper = styled.div`
     height: 50px;
     flex-wrap: wrap;
     width: 40%;
-    justify-content: space-around;
+    justify-content: end;
+    padding-right:0.5rem;
     align-items: center;
   }
 `;

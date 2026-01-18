@@ -14,7 +14,7 @@ const Footers = () => {
         <div className="footer-container">
           <div className="footer-brand">
             <img
-              src="public/auth-images/skynate-logo.jpeg"
+              src="./auth-images/skynate-logo.jpeg"
               alt="skynate"
               className="logo"
             />
@@ -31,22 +31,28 @@ const Footers = () => {
               <div
                 style={{
                   display: "flex",
-                  flexDirection:'column',
+                  flexDirection: "column",
                   justifyContent: "start",
                   alignItems: "center",
                 }}
               >
-                <Typography variant="h5Regular" className="getInTouch">GET IN TOUCH</Typography>
-               <Typography variant="h4Regular" className="contactUs">Contact Us</Typography>
+                <Typography variant="h5Regular" className="getInTouch">
+                  GET IN TOUCH
+                </Typography>
+                <Typography variant="h4Regular" className="contactUs">
+                  Contact Us
+                </Typography>
               </div>
-              <span><FaLongArrowAltRight /></span>
+              <span>
+                <FaLongArrowAltRight />
+              </span>
             </a>
 
             <div className="socials">
-              <FaSquareFacebook className="social-apps"/>
-              <FaLinkedin  className="social-apps"/>
-              <IoLogoWhatsapp className="social-apps"/>
-              <RiInstagramFill className="social-apps"/>
+              <FaSquareFacebook className="social-apps" />
+              <FaLinkedin className="social-apps" />
+              <IoLogoWhatsapp className="social-apps" />
+              <RiInstagramFill className="social-apps" />
             </div>
           </div>
 
@@ -140,7 +146,7 @@ export default Footers;
 
 const FooterWrapper = styled.div`
   .footer {
-    background: ${props=>props.theme.footerBackground};
+    background: ${(props) => props.theme.footerBackground};
     color: #cbd5f5;
     padding: 70px 40px 30px;
     font-family: Inter, system-ui, sans-serif;
@@ -182,19 +188,19 @@ const FooterWrapper = styled.div`
     width: 60%;
     transition: transform 0.3s linear;
   }
-    .cta-btn:hover  {
+  .cta-btn:hover {
     transform: translateY(-4px);
   }
 
   .getInTouch {
-    color:${(props)=>props.theme.subtitle};
+    color: ${(props) => props.theme.subtitle};
   }
   .contactUs {
-  color:${(props)=>props.theme.sliderText};
+    color: ${(props) => props.theme.sliderText};
   }
 
   .cta-btn span {
-  margin-left:30px;
+    margin-left: 30px;
     transition: transform 0.3s;
   }
 
@@ -204,12 +210,12 @@ const FooterWrapper = styled.div`
 
   .socials {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     gap: 12px;
   }
-.social-apps{
-font-size:2vw;
-}
+  .social-apps {
+    font-size: 2vw;
+  }
 
   .footer-links h4,
   .footer-trust h4 {
@@ -275,8 +281,8 @@ font-size:2vw;
     .footer-container {
       grid-template-columns: 1fr;
     }
-      .cta-btn {
-      width:100%;
-      }
+    .cta-btn {
+      width: 100%;
+    }
   }
 `;
