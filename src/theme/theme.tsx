@@ -3,6 +3,7 @@ export const darkTheme = {
   button: "#F6F9F6",
   buttonTitle: "#141B2D",
   title: "#FFFFFF",
+  shadow:'#1C1C1C',
   footerBackground: "radial-gradient(circle at top, #0b1020, #060914)",
   applicationLogo:
     "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(100%) hue-rotate(198deg) brightness(100%) contrast(100%)",
@@ -77,12 +78,17 @@ export const darkTheme = {
   appleText: "#86868B",
   appleGrayText: "#F5F5F7",
   appleBackground: "#F5F5F7",
+  segmentBackground:
+    "radial-gradient( circle at 70% 60%, #ffffff 0%, #f2f2f2 35%, #e6e6e6 65%, #d9d9d9 100% ), linear-gradient( 135deg, #ffffff 0%, #f5f5f5 50%, #ebebeb 100% );",
 };
 
 export const lightTheme = {
+  segmentBackground:
+    "linear-gradient( 135deg, #0b0b0b 0%, #111111 35%, #1a1a1a 55%, #2a2a2a 75%, #3a3a3a 100% )",
+
   appleBackground: "#F5F5F7",
   appleGrayText: "#F5F5F7",
-  appleText: "#86868B", 
+  appleText: "#86868B",
   appleHeadingText: "#1D1D1F",
   rainbowText:
     "linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #4b0082, #8f00ff 100%)",
@@ -100,6 +106,7 @@ export const lightTheme = {
   freePlanTimer: "#fff2f4",
   freePlanTimerBorder: "#fff2f4",
   title: "#1C1C1C",
+  shadow:'#1C1C1C',
   icon: "#1c1c1c",
   subtitle: "#7782A1",
   sideMenu: "#FFFFFF",
