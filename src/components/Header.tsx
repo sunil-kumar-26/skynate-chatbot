@@ -5,6 +5,7 @@ import { Button, Space } from "antd";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import LanguageSelector from "../utils/LanguageSelector";
+import { Link } from "react-router-dom";
 
 type HeaderProps = { themeSettings: any };
 const Header = ({ themeSettings }: HeaderProps) => {
@@ -16,8 +17,8 @@ const Header = ({ themeSettings }: HeaderProps) => {
         <Menu />
         <div className="settings-container">
           <Space>
-            <Button className="login">Login in</Button>
-            <Button className="signup">Sign up </Button>
+            <Link to={'/auth/login'}><Button className="login"> Login in</Button></Link>
+            <Link to={'/auth/signup'}><Button className="signup">Sign up </Button></Link>
             {themeSettings?.isDarkTheme ? (
               <LuSunMoon
                 onClick={themeSettings.toggleTheme}
