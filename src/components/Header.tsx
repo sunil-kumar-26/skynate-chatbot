@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Logo } from "../utils/Icon";
 import Menu from "./Menu";
-import { Space } from "antd";
+import { Button, Space } from "antd";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import LanguageSelector from "../utils/LanguageSelector";
@@ -16,6 +16,8 @@ const Header = ({ themeSettings }: HeaderProps) => {
         <Menu />
         <div className="settings-container">
           <Space>
+            <Button className="login">Login in</Button>
+            <Button className="signup">Sign up </Button>
             {themeSettings?.isDarkTheme ? (
               <LuSunMoon
                 onClick={themeSettings.toggleTheme}
@@ -44,18 +46,22 @@ const HeaderWrapper = styled.div`
     padding: 4px;
     border-radius: 10%;
     cursor: pointer;
-    transition: padding 0.3s linear, color 0.3s linear;
+    transition:
+      padding 0.3s linear,
+      color 0.3s linear;
   }
   .light-container {
     color: #f6f9f6;
-    height:30%;
+    height: 30%;
     background: #6e6a6a;
     font-size: 32px;
     padding: 4px;
     cursor: pointer;
     border-radius: 10%;
     transform: rotate(0deg);
-    transition: padding 0.3s linear, color 0.3s linear;
+    transition:
+      padding 0.3s linear,
+      color 0.3s linear;
   }
 
   .light-container:hover {
@@ -85,7 +91,40 @@ const HeaderWrapper = styled.div`
     flex-wrap: wrap;
     width: 40%;
     justify-content: end;
-    padding-right:0.5rem;
+    padding-right: 0.5rem;
     align-items: center;
+  }
+  .login {
+    background: ${(props) => props.theme.gradientText};
+    padding: 6px;
+    -webkit-background-clip: text;
+    border: 1px solid #4096ff;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    transition: transform 0.2s linear;
+  }
+
+  .login:hover {
+    transform: scale(1.1);
+    border: 1px solid #4096ff !important;
+  }
+
+  .signup {
+    margin-right: 12px;
+    background: ${(props) => props.theme.body};
+    padding: 6px;
+    border: 1px solid ${(props) => props.theme.title};
+    font-weight: 500;
+    color: ${(props) => props.theme.title} !important;
+    transition:
+      background 0.2s linear,
+      border 0.2s linear,
+      color 0.2s linear;
+  }
+
+  .signup:hover {
+    border: 1px solid${(props) => props.theme.title}!important;
+    background: ${(props) => props.theme.title} !important;
+    color: ${(props) => props.theme.body} !important;
   }
 `;

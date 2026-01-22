@@ -8,7 +8,7 @@ const SignupPage = () => {
     <SignupWrapper>
       <div className="signup-container">
         <img
-          src="auth-images/Refokus.jpg"
+          src="./auth-images/Refokus.jpg"
           alt="register"
           className="register"
         />

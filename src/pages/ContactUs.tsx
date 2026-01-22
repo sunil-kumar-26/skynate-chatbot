@@ -69,10 +69,10 @@ export const ContactUs = () => {
           lg={15}
           xs={24}
           ref={colRef}
-          className={`col-2 ${colVisible3 ? "bounce-in-bck " : ""}`}
+          className={`col-2 scroll-animate ${colVisible3 ? "animate" : ""}`}
         >
           <Typography variant="h4Semibold" className={"typo-4"}>
-            Please provide you email so that we can reach you
+            Please provide your email so that we can reach you
           </Typography>
           <div
             style={{
