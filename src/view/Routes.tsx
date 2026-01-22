@@ -8,11 +8,11 @@ const Routes = createBrowserRouter([
     Component: App,
   },
   {
-    path: "/skynateai/user/auth/signup",
+    path: "/auth/signup",
     element: <SignupPage />,
   },
   {
-    path: "/skynateai/user/auth/login",
+    path: "/auth/login",
       lazy:async () => {
     const module = await import("../pages/LoginPage");
     return { Component: module.default };
