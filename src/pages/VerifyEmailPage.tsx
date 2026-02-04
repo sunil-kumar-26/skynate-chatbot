@@ -24,6 +24,7 @@ const VerifyEmailPage = () => {
     }
 
     const verify = async () => {
+      
       try {
         await authServices.verifyEmailService({ token, id });
         setStatus("success");
