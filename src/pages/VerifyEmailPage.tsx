@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import authServices from "../modules/auth/authServices";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Spin } from "antd";
 
 type StatusType = "loading" | "success" | "error";
@@ -24,6 +24,7 @@ const VerifyEmailPage = () => {
     }
 
     const verify = async () => {
+      
       try {
         await authServices.verifyEmailService({ token, id });
         setStatus("success");
@@ -110,19 +111,6 @@ const ActionButton = styled.button`
   }
 `;
 
-const spin = keyframes`
-  to { transform: rotate(360deg); }
-`;
-
-const Spinner = styled.div`
-  width: 48px;
-  height: 48px;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  border-top-color: #6366f1;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: ${spin} 1s linear infinite;
-`;
 
 const Icon = styled.div<{ success?: boolean }>`
   width: 48px;

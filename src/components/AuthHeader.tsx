@@ -22,7 +22,11 @@ const AuthHeader = ({ theme }: AuthHeaderProps) => {
         <Logo />
         <div className="settings-container">
           <Space>
-           <Link to={'/'}><Button><FaHome/></Button></Link>
+            <Link to={"/"}>
+              <Button>
+                <FaHome />
+              </Button>
+            </Link>
             {theme.isDarkTheme ? (
               <LuSunMoon
                 onClick={theme.toggleTheme}
@@ -55,6 +59,7 @@ const HeaderWrapper = styled.div`
       padding 0.3s linear,
       color 0.3s linear;
   }
+
   .light-container {
     color: #f6f9f6;
     height: 30%;
@@ -84,7 +89,7 @@ const HeaderWrapper = styled.div`
     color: white;
     position: fixed;
     width: 100%;
-    height:10%;
+    height: 10%;
     z-index: 10;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px) saturate(180%);

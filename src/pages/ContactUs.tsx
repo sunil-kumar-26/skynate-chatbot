@@ -1,4 +1,4 @@
-import { Button, Col, Row, Modal, Input, Form } from "antd";
+import { Button, Col, Row, Modal, Input, Form, message } from "antd";
 import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 import { Address, Call, Email } from "../utils/Icon";
@@ -30,6 +30,7 @@ export const ContactUs = () => {
   });
 
   const onSubmit = (data: any) => {
+    message.success(`Email sent successfully on ${data.email}`);
     reset();
     setOpenModal(false);
   };
