@@ -30,7 +30,6 @@ export const ContactUs = () => {
   });
 
   const onSubmit = (data: any) => {
-    console.log("Signup Data:", data);
     reset();
     setOpenModal(false);
   };

@@ -182,7 +182,7 @@ async function initEn() {
   const language = languages["en"];
 
   language.dictionary = (await import("./en")).default;
-  console.log("data file", language.dictionary);
+  
   if (language.dictionary.validation) {
     setYupLocale(language.dictionary.validation);
   }

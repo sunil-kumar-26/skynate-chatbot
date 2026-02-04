@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 export const signupSchema = yup.object({
-  userName: yup
+  name: yup
     .string()
     .min(3, " Atleast 3 characters required")
     .required("User name is required")
@@ -31,9 +31,27 @@ export const forgotPasswordSchema = yup.object({
     .required("Email is required"),
 });
 
+export const resetPasswordSchema = yup.object({
+ password: yup
+    .string()
+    .min(6, "Minimum 6 characters")
+    .required("Password is required"),
+});
+
 export const modalSchema = yup.object({
   email: yup
     .string()
     .email("Invalid email address")
     .required("Email is required"),
+});
+
+export const loginSchema = yup.object({
+  email: yup
+    .string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .min(8, "Minimum 6 characters")
+    .required("Password is required"),
 });

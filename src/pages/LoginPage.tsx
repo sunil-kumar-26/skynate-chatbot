@@ -1,23 +1,28 @@
 import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 import LoginForm from "../utils/LoginForm";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-    
   return (
     <LoginWrapper>
       <div className="login-container">
         <img
-          src="auth-images/Vecteezy.jpg"
+          src="/auth-images/Vecteezy.jpg"
           alt="register"
           className="register"
         />
         <div className="form-container">
-          <Typography variant="h2Semibold" className='typography' color="heading">Log Into Account</Typography>
-          <Typography variant="h5Regular"  className='typography'>
-            Don't have an account? Create an Account
+          <Typography variant="h2Semibold" className="typography">
+            Log Into Account
           </Typography>
-          <LoginForm/>
+          <Typography variant="h5Regular" className="typography">
+            Don't have an account?{" "}
+            <Link to={"/auth/signup"} className="forgot-link">
+              Create an Account
+            </Link>
+          </Typography>
+          <LoginForm />
         </div>
       </div>
     </LoginWrapper>
@@ -28,10 +33,10 @@ export default LoginPage;
 
 export const LoginWrapper = styled.div`
   color: ${(props) => props.theme.title};
-  background: url("auth-images/Mockups.jpg");
+  background: url("/auth-images/Mockups.jpg");
   background-size: cover;
   height: 100%;
-  min-height:100vh;
+  min-height: 100vh;
   display: flex !important;
   width: 100%;
   justify-content: center;
@@ -64,8 +69,8 @@ export const LoginWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    gap:10px;
-    padding:18px 0px;  
+    gap: 10px;
+    padding: 18px 0px;
   }
   @media (max-width: 430px) {
     .register {
@@ -75,7 +80,7 @@ export const LoginWrapper = styled.div`
       width: 100%;
     }
   }
-    .typography{
+  .typography {
     color: ${(props) => props.theme.title};
-    }
+  }
 `;

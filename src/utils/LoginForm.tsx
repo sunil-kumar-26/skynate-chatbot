@@ -1,30 +1,48 @@
 import { useForm, Controller } from "react-hook-form";
-import { Input, Button, Form, Checkbox } from "antd";
+import { Input, Button, Form } from "antd";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { signupSchema } from "./Schema";
+import { loginSchema } from "./Schema";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import authServices from "../modules/auth/authServices";
+import { useState } from "react";
+import messages from "../view/message/messages";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const navigate = useNavigate();
   const {
     control,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(signupSchema),
+    resolver: yupResolver(loginSchema),
     mode: "onBlur",
   });
 
-  const onSubmit = (data: any) => {
-    console.log("Signup Data:", data);
-    reset();
+  const onSubmit = async (data: object) => {
+    try {
+      setIsLoading(true);
+      const resData = await authServices.loginService(data);
+      if (resData.data.token) {
+        localStorage.setItem("token", resData.data.token);
+      }
+      messages(resData);
+      setIsLoading(false);
+      reset();
+      navigate("/chat");
+    } catch (err) {
+      console.error("Error", err);
+      setIsLoading(false);
+      messages(err);
+    }
   };
 
   return (
     <LoginWrapper>
       <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
-        
-
         <Form.Item
           label="Email"
           className="custom-label"
@@ -54,30 +72,17 @@ const LoginForm = () => {
             )}
           />
         </Form.Item>
-        <p style={{textAlign:'end'}}>Forgot Password?</p>
-        <Form.Item
-          validateStatus={errors.terms ? "error" : ""}
-          help={errors.terms?.message}
-        >
-          <Controller
-            name="terms"
-            control={control}
-            render={({ field }) => (
-              <Checkbox
-                checked={field.value}
-                onChange={(e) => field.onChange(e.target.checked)}
-              >
-                I agree to the Terms & Conditions
-              </Checkbox>
-            )}
-          />
-        </Form.Item>
-        
+        <p className="forgot-text">
+          <Link to={"/auth/forgotPassword"} className="forgot-link">
+            Forgot Password ?
+          </Link>
+        </p>
         <Button
           type="primary"
-          size="small"
-          style={{ width: "100%" }}
+          size="middle"
+          className="btn"
           htmlType="submit"
+          loading={isLoading}
         >
           Login Now
         </Button>
@@ -91,5 +96,24 @@ export default LoginForm;
 export const LoginWrapper = styled.div`
   .custom-label .ant-form-item-label > label {
     color: ${(props) => props.theme.title};
+  }
+  .btn {
+    width: 100%;
+  }
+  .forgot-text {
+    text-align: end;
+    color: ${(props) => props.theme.title};
+  }
+
+  .forgot-link {
+    text-align: end;
+    color: #4b91dd;
+    text-decoration: none;
+  }
+
+  .forgot-link:hover {
+    text-align: end;
+    color: #0d4888;
+    text-decoration: underline;
   }
 `;

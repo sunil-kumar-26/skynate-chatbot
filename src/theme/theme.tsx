@@ -1,9 +1,13 @@
 export const darkTheme = {
   body: "#141B2D",
   button: "#F6F9F6",
+  chatgptSidebar:'#181818',
   buttonTitle: "#141B2D",
   title: "#FFFFFF",
-  shadow:'#1C1C1C',
+  chatgptBackground: "#212121",
+  chatgptInputBackground: "#303030",
+  chatgptHeaderBorder: "#2c2c2c",
+  shadow: "#1C1C1C",
   footerBackground: "radial-gradient(circle at top, #0b1020, #060914)",
   applicationLogo:
     "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(100%) hue-rotate(198deg) brightness(100%) contrast(100%)",
@@ -83,9 +87,12 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
+  chatgptSidebar:'#FBFBFB',
   segmentBackground:
     "linear-gradient( 135deg, #0b0b0b 0%, #111111 35%, #1a1a1a 55%, #2a2a2a 75%, #3a3a3a 100% )",
-
+  chatgptBackground: "#FFFFFF",
+  chatgptInputBackground: "#F4F4F4",
+  chatgptHeaderBorder: "#F4F4F4",
   appleBackground: "#F5F5F7",
   appleGrayText: "#F5F5F7",
   appleText: "#86868B",
@@ -106,7 +113,7 @@ export const lightTheme = {
   freePlanTimer: "#fff2f4",
   freePlanTimerBorder: "#fff2f4",
   title: "#1C1C1C",
-  shadow:'#1C1C1C',
+  shadow: "#1C1C1C",
   icon: "#1c1c1c",
   subtitle: "#7782A1",
   sideMenu: "#FFFFFF",

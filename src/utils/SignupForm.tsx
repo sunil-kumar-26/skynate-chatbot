@@ -1,10 +1,17 @@
 import { useForm, Controller } from "react-hook-form";
-import { Input, Button, Form, Checkbox } from "antd";
+import { Input, Button, Form, Checkbox, message } from "antd";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signupSchema } from "./Schema";
 import styled from "styled-components";
+import { useState } from "react";
+import authServices from "../modules/auth/authServices";
+import { useNavigate } from "react-router-dom";
+import messages from "../view/message/messages";
 
 const SignupForm = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const nevigate = useNavigate();
+
   const {
     control,
     handleSubmit,
@@ -15,9 +22,23 @@ const SignupForm = () => {
     mode: "onBlur",
   });
 
-  const onSubmit = (data: any) => {
-    console.log("Signup Data:", data);
-    reset();
+  const onSubmit = async (formData: object) => {
+    setIsLoading(true);
+    try {
+      const resData = await authServices.signupService(formData);
+      if (resData.data.token) {
+        localStorage.setItem("token", resData.data.token);
+      }
+      setIsLoading(false);
+      message.success("user created successfully");
+      nevigate("/auth/login");
+    } catch (err) {
+      console.error("Check error", err);
+      messages(err);
+    } finally {
+      setIsLoading(false);
+      reset();
+    }
   };
 
   return (
@@ -26,11 +47,11 @@ const SignupForm = () => {
         <Form.Item
           label="User Name"
           className="custom-label"
-          validateStatus={errors.userName ? "error" : ""}
-          help={errors.userName?.message}
+          validateStatus={errors.name ? "error" : ""}
+          help={errors.name?.message}
         >
           <Controller
-            name="userName"
+            name="name"
             control={control}
             render={({ field }) => (
               <Input {...field} placeholder="Enter user name" />
@@ -63,7 +84,11 @@ const SignupForm = () => {
             name="password"
             control={control}
             render={({ field }) => (
-              <Input.Password {...field} placeholder="Password" />
+              <Input.Password
+                {...field}
+                placeholder="Password"
+                autoComplete="new-password"
+              />
             )}
           />
         </Form.Item>
@@ -78,6 +103,7 @@ const SignupForm = () => {
               <Checkbox
                 checked={field.value}
                 onChange={(e) => field.onChange(e.target.checked)}
+                className="terms"
               >
                 I agree to the Terms & Conditions
               </Checkbox>
@@ -90,6 +116,7 @@ const SignupForm = () => {
           size="small"
           style={{ width: "100%" }}
           htmlType="submit"
+          loading={isLoading}
         >
           Create Now
         </Button>
@@ -103,5 +130,8 @@ export default SignupForm;
 export const SignupWrapper = styled.div`
   .custom-label .ant-form-item-label > label {
     color: ${(props) => props.theme.title};
+  }
+  .terms {
+    color: ${(props) => props.theme.title} !important;
   }
 `;

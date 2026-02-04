@@ -21,8 +21,8 @@ const LayoutPage: React.FC<LayoutPageProps> = ({ themeSettings }) => {
         <Content className="content-container">
           <HeroPage />
           <FeaturePage />
-          <AboutPage/>  
-          <ContactUs/>
+          <AboutPage />
+          <ContactUs />
         </Content>
         <Footer className="lay-footer-container">
           <Footers />
@@ -45,7 +45,8 @@ const LayoutPageWrapper = styled.div`
     padding-right: 0px;
     height: 100%;
     min-height: 100vh;
-    margin-top: 70px;
+    // margin-top: 70px;
+    margin-top: 50px;
     // background: ${(props) => props.theme.body};
     color: ${(props) => props.theme.title};
   }

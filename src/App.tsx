@@ -5,6 +5,7 @@ import useToggleTheme from "./hooks/useToggleTheme";
 import LayoutPage from "./pages/LayoutPage";
 import { ConfigProvider } from "antd";
 import { getAntdLanguage } from "./i18n";
+// import ScrollRestoration from "./utils/ScrollRestoration";
 
 function App() {
   const { isDarkTheme, toggleTheme } = useToggleTheme();
@@ -14,6 +15,7 @@ function App() {
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
           <LayoutWrapper>
             <LayoutPage themeSettings={{ toggleTheme, isDarkTheme }} />
+            {/* <ScrollRestoration /> */}
           </LayoutWrapper>
         </ThemeProvider>
       </ConfigProvider>
