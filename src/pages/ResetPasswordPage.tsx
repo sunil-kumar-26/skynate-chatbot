@@ -1,85 +1,91 @@
 import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
-import { Card, message } from "antd";
+import { Card } from "antd";
 import { useForm, Controller } from "react-hook-form";
 import { Input, Button, Form } from "antd";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { forgotPasswordSchema } from "../utils/Schema";
-import { Link,} from "react-router-dom";
+import { resetPasswordSchema } from "../utils/Schema";
 import authServices from "../modules/auth/authServices";
-import { useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const ForgotPasswordPage = () => {
+const ResetPasswordPage = () => {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const token = searchParams.get("token");
+  const id = searchParams.get("id");
+
   const {
     control,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(forgotPasswordSchema),
+    resolver: yupResolver(resetPasswordSchema),
     mode: "onBlur",
   });
 
-  const onSubmit = async (data: object) => {
+  useEffect(() => {
+    if (!token || !id) {
+      navigate("/auth/forgotPassword");
+    }
+  }, [token, id]);
+
+  const onSubmit = async (data: { password: string }) => {
     try {
       setIsLoading(true);
-      const resData = await authServices.forgotPasswordService(data);
-      message.success(resData?.data.message);
+      await authServices.resetPasswordService({
+        token,
+        id,
+        password: data.password,
+      });
       reset();
-      setIsLoading(false);
     } catch (err) {
+      console.error("Reset password error", err);
+      navigate("/auth/forgotPassword");
+    } finally {
       setIsLoading(false);
-      console.error(err);
+      navigate("/auth/login");
     }
   };
+
   return (
     <ForgotWrapper>
       <Card>
         <Typography className="typographyh2" variant="h2Semibold">
-          Forgot Password ?
+          Enter New Password
         </Typography>
+
         <Typography className="typographyh1" variant="h5Regular">
-          Please enter your registerd email to reset password
+          Please enter new password and click save button
         </Typography>
+
         <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
           <Form.Item
-            label="Email"
-            className="custom-label"
-            validateStatus={errors.email ? "error" : ""}
-            help={errors.email?.message}
+            label="New Password"
+            validateStatus={errors.password ? "error" : ""}
+            help={errors.password?.message}
           >
             <Controller
-              name="email"
+              name="password"
               control={control}
               render={({ field }) => (
-                <Input {...field} placeholder="Enter your email" />
+                <Input.Password {...field} placeholder="Enter your password" />
               )}
             />
           </Form.Item>
 
-          <Button
-            type="primary"
-            size="small"
-            style={{ width: "100%" }}
-            htmlType="submit"
-            loading={isLoading}
-          >
-            Send Reset Link
+          <Button type="primary" block htmlType="submit" loading={isLoading}>
+            Save Password
           </Button>
         </Form>
-        <p className="remember-text">
-          Remember your password? {""}
-          <Link to={"/auth/login"} className="login-text">
-            Login
-          </Link>
-        </p>
       </Card>
     </ForgotWrapper>
   );
 };
-
-export default ForgotPasswordPage;
+export default ResetPasswordPage;
 
 export const ForgotWrapper = styled.div`
   color: ${(props) => props.theme.text};

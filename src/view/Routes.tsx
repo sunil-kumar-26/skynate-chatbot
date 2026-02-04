@@ -1,22 +1,44 @@
 import { createBrowserRouter } from "react-router-dom";
-import SignupPage from "../pages/SignupPage";
-import App from "../App";
+import AuthLayout from "../pages/AuthLayout";
+import RouteLoader from "../utils/RouteLoader";
+import HomeLayout from "../pages/HomeLayout";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
-    Component: App,
+    lazy: RouteLoader("home"),
   },
   {
-    path: "/auth/signup",
-    element: <SignupPage />,
+    path: "/chat",
+    Component: HomeLayout,
+    children: [{ index: true, lazy: RouteLoader("chat") }],
   },
   {
-    path: "/auth/login",
-      lazy:async () => {
-    const module = await import("../pages/LoginPage");
-    return { Component: module.default };
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "signup",
+        lazy: RouteLoader("signup"),
+      },
+      {
+        path: "login",
+        lazy: RouteLoader("login"),
+      },
+      {
+        path: "forgotPassword",
+        lazy: RouteLoader("forgotPassword"),
+      },
+      {
+        path: "resetPassword",
+        lazy: RouteLoader("resetPassword"),
+      },
+      { path: "verifyEmail", lazy: RouteLoader("verifyEmail") },
+    ],
   },
+  {
+    path: "*",
+    lazy: RouteLoader("page404"),
   },
 ]);
 

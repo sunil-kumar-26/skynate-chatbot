@@ -4,6 +4,7 @@ import { i18n } from "../i18n";
 import { MdArrowOutward } from "react-icons/md";
 import { Button, Row, Col } from "antd";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 export const HeroPage = () => {
   const { ref: imgRef1, isVisible: imgVisible1 } =
@@ -23,7 +24,7 @@ export const HeroPage = () => {
         {i18n("heroSection.introductionDescription")}
       </Typography>
       <Button className="try-btn">
-        {i18n("heroSection.button")}
+        <Link to={"/chat"}>{i18n("heroSection.button")}</Link>
         <MdArrowOutward />
       </Button>
       <Row justify={"space-around"} className="row-container1" wrap={true}>

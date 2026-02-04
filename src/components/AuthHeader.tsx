@@ -1,36 +1,36 @@
 import styled from "styled-components";
 import { Logo } from "../utils/Icon";
-// import Menu from "./Menu";
 import { Button, Space } from "antd";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import LanguageSelector from "../utils/LanguageSelector";
+import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-type HeaderProps = { themeSettings: any };
-const Header = ({ themeSettings }: HeaderProps) => {
+type Theme = {
+  isDarkTheme: boolean;
+  toggleTheme: () => void;
+};
 
+type AuthHeaderProps = {
+  theme: Theme;
+};
+const AuthHeader = ({ theme }: AuthHeaderProps) => {
   return (
     <HeaderWrapper>
       <div className="header">
         <Logo />
-        {/* <Menu /> */}
         <div className="settings-container">
           <Space>
-            <Link to={"/auth/login"}>
-              <Button className="login"> Login in</Button>
-            </Link>
-            <Link to={"/auth/signup"}>
-              <Button className="signup">Sign up </Button>
-            </Link>
-            {themeSettings?.isDarkTheme ? (
+           <Link to={'/'}><Button><FaHome/></Button></Link>
+            {theme.isDarkTheme ? (
               <LuSunMoon
-                onClick={themeSettings.toggleTheme}
+                onClick={theme.toggleTheme}
                 className="dark-container"
               />
             ) : (
               <IoSunnyOutline
-                onClick={themeSettings.toggleTheme}
+                onClick={theme.toggleTheme}
                 className="light-container"
               />
             )}
@@ -42,7 +42,7 @@ const Header = ({ themeSettings }: HeaderProps) => {
   );
 };
 
-export default Header;
+export default AuthHeader;
 const HeaderWrapper = styled.div`
   .dark-container {
     color: #f6f9f6;
@@ -84,6 +84,7 @@ const HeaderWrapper = styled.div`
     color: white;
     position: fixed;
     width: 100%;
+    height:10%;
     z-index: 10;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px) saturate(180%);
