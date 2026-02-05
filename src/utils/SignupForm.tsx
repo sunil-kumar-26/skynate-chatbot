@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-import { Input, Button, Form, Checkbox, message } from "antd";
+import { Input, Button, Form, Checkbox} from "antd";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signupSchema } from "./Schema";
 import styled from "styled-components";
@@ -30,7 +30,8 @@ const SignupForm = () => {
         localStorage.setItem("token", resData.data.token);
       }
       setIsLoading(false);
-      message.success("user created successfully");
+      messages(resData);
+      console.log("RESPONSE DATA😘", resData);
       nevigate("/auth/login");
     } catch (err) {
       console.error("Check error", err);
@@ -53,6 +54,7 @@ const SignupForm = () => {
           <Controller
             name="name"
             control={control}
+            disabled={isLoading}
             render={({ field }) => (
               <Input {...field} placeholder="Enter user name" />
             )}
@@ -68,6 +70,7 @@ const SignupForm = () => {
           <Controller
             name="email"
             control={control}
+            disabled={isLoading}
             render={({ field }) => (
               <Input {...field} placeholder="Enter email" />
             )}
@@ -83,6 +86,7 @@ const SignupForm = () => {
           <Controller
             name="password"
             control={control}
+            disabled={isLoading}
             render={({ field }) => (
               <Input.Password
                 {...field}
