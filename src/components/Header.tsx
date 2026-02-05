@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import { Logo } from "../utils/Icon";
 // import Menu from "./Menu";
-import { Button, Space } from "antd";
+import { Button, Drawer, Space } from "antd";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import LanguageSelector from "../utils/LanguageSelector";
+import { MenuUnfoldOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 type HeaderProps = { themeSettings: any };
 const Header = ({ themeSettings }: HeaderProps) => {
-
+  const token = localStorage.getItem("token");
+  const [open, setOpen] = useState<boolean>(false);
+  const handleDrawer = () => setOpen(!open);
   return (
     <HeaderWrapper>
       <div className="header">
@@ -18,10 +22,10 @@ const Header = ({ themeSettings }: HeaderProps) => {
         <div className="settings-container">
           <Space>
             <Link to={"/auth/login"}>
-              <Button className="login"> Login in</Button>
+              {!token && <Button className="login"> Login in</Button>}
             </Link>
             <Link to={"/auth/signup"}>
-              <Button className="signup">Sign up </Button>
+              {!token && <Button className="signup">Sign up </Button>}
             </Link>
             {themeSettings?.isDarkTheme ? (
               <LuSunMoon
@@ -37,6 +41,42 @@ const Header = ({ themeSettings }: HeaderProps) => {
             <LanguageSelector />
           </Space>
         </div>
+        <Button
+          className="drawer-btn"
+          onClick={() => {
+            handleDrawer();
+          }}
+        >
+          <MenuUnfoldOutlined />
+        </Button>
+        {
+          <Drawer
+            size={200}
+            open={open}
+            placement="top"
+            closable={{ "aria-label": "Close Button" }}
+            onClose={handleDrawer}
+          >
+            <Space>
+              <Link to={"/auth/login"}>
+                <Button className="login"> Login in</Button>
+              </Link>
+              <Link to={"/auth/signup"}>
+                <Button className="signup">Sign up </Button>
+              </Link>
+              {
+                <Button onClick={() => themeSettings.toggleTheme()}>
+                  {themeSettings.isDarkTheme ? (
+                    <LuSunMoon className="dark-container" />
+                  ) : (
+                    <IoSunnyOutline className="light-container" />
+                  )}
+                </Button>
+              }
+              <LanguageSelector />
+            </Space>
+          </Drawer>
+        }
       </div>
     </HeaderWrapper>
   );
@@ -81,6 +121,7 @@ const HeaderWrapper = styled.div`
     padding: 5px;
     gap: 12px;
     align-content: center;
+    align-items: center;
     color: white;
     position: fixed;
     width: 100%;
@@ -131,5 +172,17 @@ const HeaderWrapper = styled.div`
     border: 1px solid${(props) => props.theme.title}!important;
     background: ${(props) => props.theme.title} !important;
     color: ${(props) => props.theme.body} !important;
+  }
+  .drawer-btn {
+    display: none;
+  }
+
+  @media (max-width: 425px) {
+    .settings-container {
+      display: none;
+    }
+    .drawer-btn {
+      display: flex;
+    }
   }
 `;
