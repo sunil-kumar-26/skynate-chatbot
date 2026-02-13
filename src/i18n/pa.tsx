@@ -1,4 +1,8 @@
 const pa = {
+  common: {
+    login: "ਲੌਗ ਇਨ",
+    signup: "ਸਾਈਨ ਅੱਪ",
+  },
   navigation: {
     home: "ਹੋਮ",
     aboutUs: "ਸਾਡੇ ਬਾਰੇ",
@@ -47,6 +51,53 @@ const pa = {
       summary3:
         "ਪਾਰਦਰਸ਼ਤਾ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖ ਕੇ ਬਣਾਇਆ ਗਿਆ, ਜੋ ਭਰੋਸੇ ਅਤੇ ਸਮੁਦਾਇਕ ਯੋਗਦਾਨ ਨੂੰ ਉਤਸ਼ਾਹਿਤ ਕਰਦਾ ਹੈ।",
     },
+  },
+  login: {
+    mainHeading: "ਖਾਤੇ ਵਿੱਚ ਲਾਗਇਨ ਕਰੋ",
+    noAccount: "ਕੀ ਤੁਹਾਡੇ ਕੋਲ ਖਾਤਾ ਨਹੀਂ ਹੈ?",
+    email: "ਈਮੇਲ",
+    inputEmail: "ਈਮੇਲ ਦਰਜ ਕਰੋ",
+    password: "ਪਾਸਵਰਡ",
+    enterPassword: "ਪਾਸਵਰਡ ਦਰਜ ਕਰੋ",
+    forgotPassword: "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ?",
+    login: "ਹੁਣ ਲਾਗਇਨ ਕਰੋ",
+    loginWithGoogle: "Google ਨਾਲ ਲਾਗਇਨ ਕਰੋ",
+    createAccount: "ਨਵਾਂ ਖਾਤਾ ਬਣਾਓ",
+  },
+  signup: {
+    mainHeading: "ਨਵਾਂ ਖਾਤਾ ਬਣਾਓ",
+    allReadyAccount: "ਕੀ ਪਹਿਲਾਂ ਤੋਂ ਖਾਤਾ ਹੈ?",
+    loginIn: "ਲਾਗਇਨ ਕਰੋ",
+    email: "ਈਮੇਲ",
+    inputEmail: "ਈਮੇਲ ਦਰਜ ਕਰੋ",
+    user: "ਯੂਜ਼ਰ ਨਾਮ",
+    inputName: "ਯੂਜ਼ਰ ਨਾਮ ਦਰਜ ਕਰੋ",
+    password: "ਪਾਸਵਰਡ",
+    enterPassword: "ਪਾਸਵਰਡ ਦਰਜ ਕਰੋ",
+    terms: "ਮੈਂ ਨਿਯਮ ਅਤੇ ਸ਼ਰਤਾਂ ਨਾਲ ਸਹਿਮਤ ਹਾਂ",
+    createNow: "ਹੁਣ ਬਣਾਓ",
+  },
+  aboutUs: {
+    mainHeading: "ਸਤ ਸ੍ਰੀ ਅਕਾਲ, ਮੈਂ Skynate AI ਦਾ ਸੰਸਥਾਪਕ ਹਾਂ",
+    heading:
+      "Skynate AI ਇੱਕ ਆਧੁਨਿਕ ਵੈੱਬ ਐਪਲੀਕੇਸ਼ਨ ਹੈ ਜੋ ਜਟਿਲ ਕੰਮਾਂ ਨੂੰ ਸੌਖਾ ਬਣਾਉਣ ਲਈ ਬੁੱਧੀਮਾਨ ਅਤੇ ਯੂਜ਼ਰ-ਕੇਂਦਰਿਤ ਹੱਲ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ। ਇਸਦਾ ਉਦੇਸ਼ ਵਿਅਕਤੀਆਂ ਅਤੇ ਕਾਰੋਬਾਰਾਂ ਨੂੰ AI ਦੀ ਤਾਕਤ ਨਾਲ ਹੋਰ ਸਮਝਦਾਰੀ ਨਾਲ ਕੰਮ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਨਾ ਹੈ।",
+    gitHub: "Github",
+    instagram: "Instagram",
+    linkedin: "LinkedIn",
+    follow: "ਫਾਲੋ ਕਰੋ",
+    followGitHub: "ਨਵੇਂ ਪ੍ਰੋਜੈਕਟਾਂ ਲਈ Github 'ਤੇ ਫਾਲੋ ਕਰੋ",
+    followInstagram: "ਨਵੀਆਂ ਅਪਡੇਟਾਂ ਲਈ Instagram 'ਤੇ ਫਾਲੋ ਕਰੋ",
+    followLinkedin: "LinkedIn 'ਤੇ ਜੁੜੋ ਤਾਂ ਜੋ ਨਵੀਆਂ ਅਪਡੇਟਾਂ ਮਿਲਦੀਆਂ ਰਹਿਣ",
+  },
+  contactUs: {
+    mainHeading: "ਸੰਪਰਕ ਕਰੋ",
+    heading:
+      "ਤੁਸੀਂ ਸਾਨੂੰ ਕਿਸੇ ਵੀ ਵੇਲੇ ਈਮੇਲ ਜਾਂ ਫੋਨ ਰਾਹੀਂ ਸੰਪਰਕ ਕਰ ਸਕਦੇ ਹੋ। ਤੁਸੀਂ ਆਪਣੀ ਈਮੇਲ ਸਾਂਝੀ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਸਾਡੀ ਟੀਮ ਜਲਦੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੇਗੀ।",
+    email: "sunilworld1234ss@gmail.com",
+    address: "ਗਣੇਸ਼ ਨਗਰ, ਨਿਊ ਲਾਇਰਜ਼ ਕਾਲੋਨੀ ਖੰਡਾਰੀ, ਆਗਰਾ 282005 UP",
+    reachingHeading:
+      "ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਈਮੇਲ ਦਿਓ ਤਾਂ ਜੋ ਅਸੀਂ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰ ਸਕੀਏ",
+    contactViaMail: "ਈਮੇਲ ਰਾਹੀਂ ਸੰਪਰਕ ਕਰੋ",
   },
 };
 

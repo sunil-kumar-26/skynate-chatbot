@@ -1,4 +1,8 @@
 const hi = {
+  common: {
+    login: "लॉग इन",
+    signup: "साइन अप",
+  },
   navigation: {
     home: "होम",
     aboutUs: "हमारे बारे में",
@@ -50,6 +54,52 @@ const hi = {
       summary3:
         "पारदर्शिता को ध्यान में रखकर बनाया गया, जो विश्वास, सहयोग और समुदाय के योगदान को बढ़ावा देता है।",
     },
+  },
+  login: {
+    mainHeading: "खाते में लॉग इन करें",
+    noAccount: "क्या आपके पास खाता नहीं है?",
+    email: "ईमेल",
+    inputEmail: "ईमेल दर्ज करें",
+    password: "पासवर्ड",
+    enterPassword: "पासवर्ड दर्ज करें",
+    forgotPassword: "पासवर्ड भूल गए?",
+    login: "अभी लॉग इन करें",
+    loginWithGoogle: "Google से लॉग इन करें",
+    createAccount: "नया खाता बनाएं",
+  },
+  signup: {
+    mainHeading: "नया खाता बनाएं",
+    allReadyAccount: "क्या पहले से खाता है?",
+    loginIn: "लॉग इन करें",
+    email: "ईमेल",
+    inputEmail: "ईमेल दर्ज करें",
+    user: "यूज़र नाम",
+    inputName: "यूज़र नाम दर्ज करें",
+    password: "पासवर्ड",
+    enterPassword: "पासवर्ड दर्ज करें",
+    terms: "मैं नियम और शर्तों से सहमत हूँ",
+    createNow: "अभी बनाएं",
+  },
+  aboutUs: {
+    mainHeading: "नमस्ते, मैं Skynate AI का संस्थापक हूँ",
+    heading:
+      "Skynate AI एक आधुनिक वेब एप्लिकेशन है जो जटिल कार्यों को सरल बनाने के लिए बुद्धिमान और उपयोगकर्ता-केंद्रित समाधान प्रदान करता है। इसका उद्देश्य व्यक्तियों और व्यवसायों को AI की शक्ति का उपयोग करके अधिक स्मार्ट तरीके से काम करने में मदद करना है।",
+    gitHub: "Github",
+    instagram: "Instagram",
+    linkedin: "LinkedIn",
+    follow: "फॉलो करें",
+    followGitHub: "नए प्रोजेक्ट्स के लिए Github पर फॉलो करें",
+    followInstagram: "नई अपडेट्स के लिए Instagram पर फॉलो करें",
+    followLinkedin: "नई अपडेट्स के लिए LinkedIn पर जुड़ें",
+  },
+  contactUs: {
+    mainHeading: "संपर्क करें",
+    heading:
+      "आप हमें किसी भी समय ईमेल या फोन के माध्यम से संपर्क कर सकते हैं। आप अपना ईमेल साझा कर सकते हैं और हमारी टीम जल्द ही आपसे संपर्क करेगी।",
+    email: "sunilworld1234ss@gmail.com",
+    address: "गणेश नगर, न्यू लॉयर्स कॉलोनी खंडारी, आगरा 282005 UP",
+    reachingHeading: "कृपया अपना ईमेल प्रदान करें ताकि हम आपसे संपर्क कर सकें",
+    contactViaMail: "ईमेल के माध्यम से संपर्क करें",
   },
 };
 

@@ -2,6 +2,7 @@ import { Button, Col, Row } from "antd";
 import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 import { Github, Instagram, Linkedin } from "../utils/Icon";
+import { i18n } from "../i18n";
 
 const GithubCard = () => {
   return (
@@ -16,10 +17,10 @@ const GithubCard = () => {
               </Typography>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", padding: "6px" }}>
-              Follow on Github, to stay updated for new projects
+              {i18n('aboutUs.followGitHub')}
             </div>
 
-            <Button href="https://github.com/sunil-kumar-26">Follow</Button>
+            <Button href="https://github.com/sunil-kumar-26">{i18n('aboutUs.follow')}</Button>
           </div>
           <div className="img-container">
             <img
@@ -47,11 +48,11 @@ const InstagramCard = () => {
               </Typography>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", padding: "6px" }}>
-              Follow on Instagram for latest information
+              {i18n('aboutUs.followInstagram')}
             </div>
 
             <Button href="https://www.instagram.com/suniel_singh_84000/">
-              Follow
+             {i18n('aboutUs.follow')}
             </Button>
           </div>
           <div className="img-container">
@@ -80,11 +81,11 @@ const LinkedinCard = () => {
               </Typography>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", padding: "6px" }}>
-              Connect in Linkedin to stay updated for new updates
+              {i18n('aboutUs.followLinkedin')}
             </div>
 
             <Button href="https://www.linkedin.com/in/sunil-kumar-53996a36a/">
-              Follow
+             {i18n('aboutUs.follow')}
             </Button>
           </div>
           <div className="img-container">

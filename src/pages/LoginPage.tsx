@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Typography } from "../theme/AppTypography";
 import LoginForm from "../utils/LoginForm";
 import { Link } from "react-router-dom";
+import { i18n } from "../i18n";
 
 const LoginPage = () => {
   return (
@@ -14,12 +15,12 @@ const LoginPage = () => {
         />
         <div className="form-container">
           <Typography variant="h2Semibold" className="typography">
-            Log Into Account
+            {i18n('login.mainHeading')}
           </Typography>
           <Typography variant="h5Regular" className="typography">
-            Don't have an account?{" "}
+            {i18n('login.noAccount')}
             <Link to={"/auth/signup"} className="forgot-link">
-              Create an Account
+             {i18n('login.createAccount')}
             </Link>
           </Typography>
           <LoginForm />

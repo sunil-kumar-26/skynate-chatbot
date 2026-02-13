@@ -1,4 +1,8 @@
 const es = {
+  common: {
+    login: "Iniciar sesión",
+    signup: "Registrarse",
+  },
   navigation: {
     home: "Inicio",
     aboutUs: "Sobre nosotros",
@@ -50,6 +54,55 @@ const es = {
       summary3:
         "Diseñado con transparencia, fomentando la confianza, la colaboración y las contribuciones de la comunidad.",
     },
+  },
+  login: {
+    mainHeading: "Iniciar sesión en la cuenta",
+    noAccount: "¿No tienes una cuenta?",
+    email: "Correo electrónico",
+    inputEmail: "Introduce el correo electrónico",
+    password: "Contraseña",
+    enterPassword: "Introduce la contraseña",
+    forgotPassword: "¿Olvidaste tu contraseña?",
+    login: "Iniciar sesión ahora",
+    loginWithGoogle: "Iniciar sesión con Google",
+    createAccount: "Crear una cuenta",
+  },
+  signup: {
+    mainHeading: "Crear una cuenta",
+    allReadyAccount: "¿Ya tienes una cuenta?",
+    loginIn: "Iniciar sesión",
+    email: "Correo electrónico",
+    inputEmail: "Introduce el correo electrónico",
+    user: "Nombre de usuario",
+    inputName: "Introduce el nombre de usuario",
+    password: "Contraseña",
+    enterPassword: "Introduce la contraseña",
+    terms: "Acepto los Términos y Condiciones",
+    createNow: "Crear ahora",
+  },
+  aboutUs: {
+    mainHeading: "Hola, soy el fundador de Skynate AI",
+    heading:
+      "Skynate AI es una aplicación web moderna diseñada para simplificar tareas complejas mediante soluciones inteligentes y centradas en el usuario. El objetivo de Skynate AI es ayudar a personas y empresas a trabajar de manera más inteligente aprovechando el poder de la IA de forma práctica y accesible.",
+    gitHub: "Github",
+    instagram: "Instagram",
+    linkedin: "LinkedIn",
+    follow: "Seguir",
+    followGitHub:
+      "Síguenos en Github para mantenerte actualizado sobre nuevos proyectos",
+    followInstagram: "Síguenos en Instagram para mantenerte actualizado",
+    followLinkedin:
+      "Conéctate en LinkedIn para mantenerte informado de nuevas actualizaciones",
+  },
+  contactUs: {
+    mainHeading: "Contáctanos",
+    heading:
+      "Puedes comunicarte con nosotros en cualquier momento por correo electrónico o teléfono. También puedes compartir tu correo electrónico con nosotros y nuestro equipo se pondrá en contacto contigo en breve para ayudarte.",
+    email: "sunilworld1234ss@gmail.com",
+    address: "Ganesh Nagar, New Lawyers Colony Khandari, Agra 282005 UP",
+    reachingHeading:
+      "Por favor proporciona tu correo electrónico para que podamos contactarte",
+    contactViaMail: "Contactar por correo",
   },
 };
 

@@ -8,6 +8,7 @@ import LanguageSelector from "../utils/LanguageSelector";
 import { MenuUnfoldOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { i18n } from "../i18n";
 
 type HeaderProps = { themeSettings: any };
 const Header = ({ themeSettings }: HeaderProps) => {
@@ -22,10 +23,10 @@ const Header = ({ themeSettings }: HeaderProps) => {
         <div className="settings-container">
           <Space>
             <Link to={"/auth/login"}>
-              {!token && <Button className="login"> Login in</Button>}
+              {!token && <Button className="login">{i18n('common.login')}</Button>}
             </Link>
             <Link to={"/auth/signup"}>
-              {!token && <Button className="signup">Sign up </Button>}
+              {!token && <Button className="signup">{i18n('common.signup')}</Button>}
             </Link>
             {themeSettings?.isDarkTheme ? (
               <LuSunMoon

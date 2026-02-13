@@ -1,4 +1,8 @@
 const bn = {
+  common: {
+    login: "লগ ইন",
+    signup: "সাইন আপ",
+  },
   navigation: {
     home: "হোম",
     aboutUs: "আমাদের সম্পর্কে",
@@ -50,6 +54,53 @@ const bn = {
       summary3:
         "স্বচ্ছতার উপর ভিত্তি করে তৈরি, যা বিশ্বাস, সহযোগিতা ও কমিউনিটি অবদানকে উৎসাহিত করে।",
     },
+  },
+  login: {
+    mainHeading: "অ্যাকাউন্টে লগ ইন করুন",
+    noAccount: "আপনার কি কোনো অ্যাকাউন্ট নেই?",
+    email: "ইমেইল",
+    inputEmail: "ইমেইল লিখুন",
+    password: "পাসওয়ার্ড",
+    enterPassword: "পাসওয়ার্ড লিখুন",
+    forgotPassword: "পাসওয়ার্ড ভুলে গেছেন?",
+    login: "এখন লগ ইন করুন",
+    loginWithGoogle: "Google দিয়ে লগ ইন করুন",
+    createAccount: "একটি অ্যাকাউন্ট তৈরি করুন",
+  },
+  signup: {
+    mainHeading: "নতুন অ্যাকাউন্ট তৈরি করুন",
+    allReadyAccount: "ইতিমধ্যে কি আপনার অ্যাকাউন্ট আছে?",
+    loginIn: "লগ ইন করুন",
+    email: "ইমেইল",
+    inputEmail: "ইমেইল লিখুন",
+    user: "ব্যবহারকারীর নাম",
+    inputName: "ব্যবহারকারীর নাম লিখুন",
+    password: "পাসওয়ার্ড",
+    enterPassword: "পাসওয়ার্ড লিখুন",
+    terms: "আমি শর্তাবলীতে সম্মত",
+    createNow: "এখন তৈরি করুন",
+  },
+  aboutUs: {
+    mainHeading: "হ্যালো, আমি Skynate AI এর প্রতিষ্ঠাতা",
+    heading:
+      "Skynate AI একটি আধুনিক ওয়েব অ্যাপ্লিকেশন যা বুদ্ধিমান ও ব্যবহারকারী-কেন্দ্রিক সমাধানের মাধ্যমে জটিল কাজ সহজ করে। এর লক্ষ্য ব্যক্তি ও ব্যবসায়ীদের AI এর শক্তি ব্যবহার করে আরও স্মার্টভাবে কাজ করতে সহায়তা করা।",
+    gitHub: "Github",
+    instagram: "Instagram",
+    linkedin: "LinkedIn",
+    follow: "ফলো করুন",
+    followGitHub: "নতুন প্রজেক্টের আপডেট পেতে Github-এ ফলো করুন",
+    followInstagram: "নতুন আপডেটের জন্য Instagram-এ ফলো করুন",
+    followLinkedin: "নতুন আপডেট পেতে LinkedIn-এ যুক্ত হন",
+  },
+  contactUs: {
+    mainHeading: "যোগাযোগ করুন",
+    heading:
+      "আপনি যেকোনো সময় ইমেইল বা ফোনের মাধ্যমে আমাদের সাথে যোগাযোগ করতে পারেন। আপনার ইমেইল শেয়ার করলে আমাদের টিম খুব শীঘ্রই আপনার সাথে যোগাযোগ করবে।",
+    email: "sunilworld1234ss@gmail.com",
+    address: "গণেশ নগর, নিউ লইয়ার্স কলোনি খন্ডারি, আগ্রা 282005 UP",
+    reachingHeading:
+      "অনুগ্রহ করে আপনার ইমেইল দিন যাতে আমরা আপনার সাথে যোগাযোগ করতে পারি",
+    contactViaMail: "ইমেইলের মাধ্যমে যোগাযোগ করুন",
   },
 };
 

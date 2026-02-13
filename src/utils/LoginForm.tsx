@@ -5,9 +5,11 @@ import { loginSchema } from "./Schema";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import authServices from "../modules/auth/authServices";
-import { useState } from "react";
+import {  useState } from "react";
 import messages from "../view/message/messages";
 import { useNavigate } from "react-router-dom";
+import { Google } from "./Icon";
+import { i18n } from "../i18n";
 
 const LoginForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -40,11 +42,15 @@ const LoginForm = () => {
     }
   };
 
+  const googleLogin = () => {
+    window.location.href = `${import.meta.env.VITE_API_BASE}/auth/google`;
+  };
+
   return (
     <LoginWrapper>
       <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
         <Form.Item
-          label="Email"
+          label={i18n('login.email')}
           className="custom-label"
           validateStatus={errors.email ? "error" : ""}
           help={errors.email?.message}
@@ -53,13 +59,13 @@ const LoginForm = () => {
             name="email"
             control={control}
             render={({ field }) => (
-              <Input {...field} placeholder="Enter email" />
+              <Input {...field} placeholder={i18n('login.inputEmail')} />
             )}
           />
         </Form.Item>
 
         <Form.Item
-          label="Password"
+          label={i18n('login.password')}
           className="custom-label"
           validateStatus={errors.password ? "error" : ""}
           help={errors.password?.message}
@@ -68,13 +74,13 @@ const LoginForm = () => {
             name="password"
             control={control}
             render={({ field }) => (
-              <Input.Password {...field} placeholder="Password" />
+              <Input.Password {...field} placeholder={i18n('login.inputEmail')} />
             )}
           />
         </Form.Item>
         <p className="forgot-text">
           <Link to={"/auth/forgotPassword"} className="forgot-link">
-            Forgot Password ?
+            {i18n('login.forgotPassword')}
           </Link>
         </p>
         <Button
@@ -84,7 +90,11 @@ const LoginForm = () => {
           htmlType="submit"
           loading={isLoading}
         >
-          Login Now
+         {i18n('login.login')}
+        </Button>
+        <Button className="google-btn" onClick={() => googleLogin()}>
+          <Google />
+          {i18n('login.loginWithGoogle')}
         </Button>
       </Form>
     </LoginWrapper>
@@ -115,5 +125,10 @@ export const LoginWrapper = styled.div`
     text-align: end;
     color: #0d4888;
     text-decoration: underline;
+  }
+  .google-btn {
+    margin-top: 12px;
+    display: flex;
+    width: 100%;
   }
 `;

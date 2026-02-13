@@ -8,6 +8,7 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { modalSchema } from "../utils/Schema";
 import { IoIosSend } from "react-icons/io";
+import { i18n } from "../i18n";
 
 export const ContactUs = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -45,16 +46,14 @@ export const ContactUs = () => {
           className={`col-1 scroll-animate ${textVisible1 ? "animate" : ""}`}
         >
           <Typography variant="h1Bold" className="typo-0">
-            Contact US
+            {i18n('contactUs.mainHeading')}
           </Typography>
           <Typography variant="h4Regular" className="typo-01">
-            You can reach us anytime via email or phone. You may also share your
-            email with us, and our team will contact you shortly to assist you
-            further.
+            {i18n('contactUs.heading')}
           </Typography>
 
           <Typography variant="h5Regular" className="typo-1">
-            <Email /> sunilworld1234ss@gmail.com |
+            <Email /> {i18n('contactUs.email')}|
           </Typography>
           <Typography variant="h5Regular" className="typo-1">
             <Call /> +91 8534853275
@@ -62,7 +61,7 @@ export const ContactUs = () => {
 
           <Typography variant="h5Regular" className="typo-3">
             <Address />
-            Ganesh nagar, new lawyers colony khnadari, Agra 282005 UP{" "}
+           {i18n('contactUs.address')}
           </Typography>
         </Col>
         <Col
@@ -72,7 +71,7 @@ export const ContactUs = () => {
           className={`col-2 scroll-animate ${colVisible3 ? "animate" : ""}`}
         >
           <Typography variant="h4Semibold" className={"typo-4"}>
-            Please provide your email so that we can reach you
+           {i18n('contactUs.reachingHeading')}
           </Typography>
           <div
             style={{
@@ -86,7 +85,7 @@ export const ContactUs = () => {
               ref={btnRef}
               onClick={() => handleOpenModal()}
             >
-              Contact via mail <IoIosSend />
+              {i18n('contactUs.contactViaMail')}<IoIosSend />
             </Button>
           </div>
         </Col>
