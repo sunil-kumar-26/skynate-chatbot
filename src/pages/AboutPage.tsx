@@ -10,6 +10,7 @@ import {
 import { SegmentData } from "../data/segmentData";
 import { useState } from "react";
 import { Typography } from "../theme/AppTypography";
+import { i18n } from "../i18n";
 
 export const AboutPage = () => {
   const [Mode, setMode] = useState("GithubCard");
@@ -21,7 +22,7 @@ export const AboutPage = () => {
   return (
     <AboutWrapper>
       <Typography variant="h1Bold" className={"typo-1"}>
-        Hello,i'm the founder of skynate AI
+         {i18n('aboutUs.mainHeading')}
       </Typography>
       <Col lg={18}>
         <Typography
@@ -29,10 +30,7 @@ export const AboutPage = () => {
           style={{ padding: "0px 12px" }}
           className={"typo-2"}
         >
-          Skynate AI is a modern web application designed to simplify complex
-          tasks through intelligent, user-focused solutions. The goal of Skynate
-          AI is to help individuals and businesses work smarter by leveraging
-          the power of AI in a practical, accessible way.
+          {i18n('aboutUs.heading')}
         </Typography>
       </Col>
       <div className="social-container">

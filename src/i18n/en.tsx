@@ -1,4 +1,8 @@
 const en = {
+  common: {
+    login: "login in",
+    signup: "sign up",
+  },
   navigation: {
     home: "Home",
     aboutUs: "About Us",
@@ -49,6 +53,52 @@ const en = {
       summary3:
         "Built with transparency in mind, encouraging trust, collaboration, and community contributions.",
     },
+  },
+  login: {
+    mainHeading: "Log Into Account",
+    noAccount: "Don't have an account?",
+    email: "Email",
+    inputEmail: "Enter email",
+    password: "Password",
+    enterPassword: "Enter password",
+    forgotPassword: "Forgot Password ?",
+    login: "Login Now",
+    loginWithGoogle: "Login with Google",
+    createAccount: "Create an Account",
+  },
+  signup: {
+    mainHeading: "Log Into Account",
+    allReadyAccount: "Already have an account?",
+    loginIn: "Login in",
+    email: "Email",
+    inputEmail: "Enter email",
+    user: "User Name",
+    inputName: "Enter user name",
+    password: "Password",
+    enterPassword: "Enter password",
+    terms: "I agree to the Terms & Conditions",
+    createNow: "Create Now",
+  },
+  aboutUs: {
+    mainHeading: "Hello,i'm the founder of skynate AI",
+    heading:
+      "Skynate AI is a modern web application designed to simplify complex tasks through intelligent, user-focused solutions. The goal of Skynate AI is to help individuals and businesses work smarter by leveraging the power of AI in a practical, accessible way.",
+    gitHub: "Github",
+    instagram: "Instagram",
+    linkedin: "Linkedin",
+    follow: "Folllow",
+    followGitHub: "Follow on Github, to stay updated for new projects",
+    followInstagram: "Follow on Github, to stay updated for new projects",
+    followLinkedin: "Connect in Linkedin to stay updated for new updates",
+  },
+  contactUs: {
+    mainHeading: "Contact US",
+    heading:
+      "You can reach us anytime via email or phone. You may also share your email with us, and our team will contact you shortly to assist you further.",
+    email: "sunilworld1234ss@gmail.com",
+    address: "Ganesh nagar, new lawyers colony khnadari, Agra 282005 UP",
+    reachingHeading: "Please provide your email so that we can reach you",
+    contactViaMail: "Contact via mail",
   },
 };
 

@@ -5,10 +5,15 @@ import useToggleTheme from "../hooks/useToggleTheme";
 import { darkTheme, lightTheme } from "../theme/theme";
 import { Navigate, Outlet } from "react-router-dom";
 import SideBar from "../components/SideBar";
+import { useSearchParams } from "react-router-dom";
 
 const { Content } = Layout;
 
 const HomeLayout = () => {
+  const [searchParams] = useSearchParams();
+  const gToken: any = searchParams.get("token");
+  if (gToken) localStorage.setItem("token", gToken);
+
   const token = localStorage.getItem("token");
   if (!token) return <Navigate to="/auth/login" />;
 
@@ -22,7 +27,7 @@ const HomeLayout = () => {
               <div className="sidebar">
                 <SideBar toggle={toggleTheme} isDarkTheme={isDarkTheme} />
               </div>
-              <Outlet  context={{isDarkTheme,toggleTheme}}/>
+              <Outlet context={{ isDarkTheme, toggleTheme }} />
             </Content>
           </Layout>
         </AuthLayoutWrapper>

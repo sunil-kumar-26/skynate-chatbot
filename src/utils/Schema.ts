@@ -9,7 +9,9 @@ export const signupSchema = yup.object({
   email: yup
     .string()
     .email("Invalid email address")
-    .required("Email is required"),
+    .required("Email is required")
+    .trim()
+    .lowercase(),
   password: yup
     .string()
     .min(6, "Minimum 6 characters")
@@ -28,11 +30,13 @@ export const forgotPasswordSchema = yup.object({
   email: yup
     .string()
     .email("Invalid email address")
+    .trim()
+    .lowercase()
     .required("Email is required"),
 });
 
 export const resetPasswordSchema = yup.object({
- password: yup
+  password: yup
     .string()
     .min(6, "Minimum 6 characters")
     .required("Password is required"),
@@ -42,16 +46,20 @@ export const modalSchema = yup.object({
   email: yup
     .string()
     .email("Invalid email address")
-    .required("Email is required"),
+    .required("Email is required")
+    .trim()
+    .lowercase(),
 });
 
 export const loginSchema = yup.object({
   email: yup
     .string()
     .email("Invalid email address")
-    .required("Email is required"),
+    .required("Email is required")
+    .trim()
+    .lowercase(),
   password: yup
     .string()
-    .min(8, "Minimum 6 characters")
+    .min(8, "Minimum 8 characters")
     .required("Password is required"),
 });

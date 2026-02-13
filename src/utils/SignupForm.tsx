@@ -7,6 +7,7 @@ import { useState } from "react";
 import authServices from "../modules/auth/authServices";
 import { useNavigate } from "react-router-dom";
 import messages from "../view/message/messages";
+import { i18n } from "../i18n";
 
 const SignupForm = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -31,11 +32,10 @@ const SignupForm = () => {
       }
       setIsLoading(false);
       messages(resData);
-      console.log("RESPONSE DATA😘", resData);
-      nevigate("/auth/login");
+      nevigate((resData?.data?.url)?resData?.data?.url:'/auth/login');
     } catch (err) {
-      console.error("Check error", err);
       messages(err);
+      console.error("Check error", err);
     } finally {
       setIsLoading(false);
       reset();
@@ -46,7 +46,7 @@ const SignupForm = () => {
     <SignupWrapper>
       <Form layout="vertical" onFinish={handleSubmit(onSubmit)}>
         <Form.Item
-          label="User Name"
+          label= {i18n('signup.user')}
           className="custom-label"
           validateStatus={errors.name ? "error" : ""}
           help={errors.name?.message}
@@ -56,13 +56,13 @@ const SignupForm = () => {
             control={control}
             disabled={isLoading}
             render={({ field }) => (
-              <Input {...field} placeholder="Enter user name" />
+              <Input {...field} placeholder= {i18n('signup.inputName')} />
             )}
           />
         </Form.Item>
 
         <Form.Item
-          label="Email"
+          label= {i18n('signup.email')}
           className="custom-label"
           validateStatus={errors.email ? "error" : ""}
           help={errors.email?.message}
@@ -72,13 +72,13 @@ const SignupForm = () => {
             control={control}
             disabled={isLoading}
             render={({ field }) => (
-              <Input {...field} placeholder="Enter email" />
+              <Input {...field} placeholder= {i18n('signup.inputEmail')} />
             )}
           />
         </Form.Item>
 
         <Form.Item
-          label="Password"
+          label= {i18n('signup.password')}
           className="custom-label"
           validateStatus={errors.password ? "error" : ""}
           help={errors.password?.message}
@@ -90,7 +90,7 @@ const SignupForm = () => {
             render={({ field }) => (
               <Input.Password
                 {...field}
-                placeholder="Password"
+                placeholder= {i18n('signup.enterPassword')}
                 autoComplete="new-password"
               />
             )}
@@ -109,7 +109,7 @@ const SignupForm = () => {
                 onChange={(e) => field.onChange(e.target.checked)}
                 className="terms"
               >
-                I agree to the Terms & Conditions
+                 {i18n('signup.terms')}
               </Checkbox>
             )}
           />
@@ -122,7 +122,7 @@ const SignupForm = () => {
           htmlType="submit"
           loading={isLoading}
         >
-          Create Now
+           {i18n('signup.createNow')}
         </Button>
       </Form>
     </SignupWrapper>
